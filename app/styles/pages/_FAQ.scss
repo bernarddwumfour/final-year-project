@@ -1,0 +1,62 @@
+#faqpage{
+    .breadcrums{
+        margin: 2rem 0;
+        
+        .title{
+            box-shadow: $box_shadow;
+            background: lighten($primary,5);
+            color: #fff;
+            padding: 1rem ;
+            border-radius: $border_radius;
+        }
+    
+        .body{
+            line-height: 150%;
+            color: $text;
+            border: 1px solid lightgrey;
+            margin-top: .41rem;
+            border-radius: $border_radius;
+            height: 0;
+            padding: 0;
+            border: none;
+            overflow: hidden;
+    
+        }
+    
+        &.active{
+    
+        .body{
+        height: auto;
+        padding: 1rem;
+        border: 1px solid lightgrey;
+        overflow: show;
+        }
+    
+        }
+    }
+
+    .page{
+        &>p{
+            max-width: 1300px;
+            line-height: 150%;
+            padding-bottom: 3rem;
+        }
+    }
+}
+
+@media (max-width:750px) {
+    .breadcrums{
+        margin: 1.5rem 0;
+        
+        .title{
+         font-size: .9rem;
+        }
+    
+        .body{
+           font-size: .85rem;
+    
+        }
+        
+    }
+    
+}

@@ -1,0 +1,12 @@
+footer{
+    background: lighten($primary,5);
+    padding: 4rem 3rem;
+
+    div{
+        text-align: center;
+        
+        p{
+            color: #fff;
+        }
+    }
+}

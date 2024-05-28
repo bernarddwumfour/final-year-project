@@ -1,0 +1,16 @@
+.click{
+    color: #fff;
+    background: $primary;
+    text-decoration: none;
+    padding: .75rem 1.25rem;
+    display: inline-block;
+    border-radius: $border_radius;
+    font-weight: 500;
+    border: none;
+    outline: none;
+
+    &.secondary{
+        background: #fff;
+        color: $primary;
+    }
+}

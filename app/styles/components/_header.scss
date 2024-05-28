@@ -1,0 +1,126 @@
+header{
+    position: fixed;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.541);
+    padding-top: 1.5rem;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+    
+    
+    nav{
+        background: $primary;
+        @extend .center;
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        padding: 0.85rem 1.25rem;
+        border-radius: 1.5rem;
+        box-shadow: $box_shadow;
+
+        .bars{
+            display: none;
+        }
+
+        .logo{
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.45rem;
+            font-weight:600;
+        }
+
+        menu{
+            display: flex;
+            gap: 1.15rem;
+
+            a{
+                text-decoration: none;
+                color: #fff;
+                font-size: .9rem;
+
+                // &:hover{
+                //     color: darken($secondary,20);
+                // }
+            }
+        }
+    }
+
+    &>menu{
+        display: none;
+    }
+
+   
+}
+
+@media (max-width:950px) {
+
+    header{
+        padding-top: 0.85rem;
+
+        nav{
+            border-radius: 1rem;
+            menu{
+                display: none;
+            }
+
+
+        .bars{
+            position: fixed;
+            width: 24px;
+            height: 24px;
+            right: 1.5rem;
+            top: 1rem;
+            z-index: 11;
+            display: block;
+            transform: scale(.9);
+            transform-origin: center;
+
+            .bar{
+                width: 100%;
+                height: 2px;
+                background: #fff;
+                position: relative;
+                border-radius: 2px;
+
+                &::before,&::after{
+                    content: "";
+                    position: absolute;
+                    top: 8px;
+                    background: #fff;
+                    height: 2px;
+                    width: 100%;
+                    border-radius: 2px;
+
+                }
+
+                &::after{
+                    top: 16px;
+                }
+            }
+        }
+        }
+
+        &.active{
+            &>menu{
+                position: relative;
+                background: #ffffffa4;
+                left: 50%;
+                transform: translateX(-50%);
+                margin-top: .5rem;
+                padding: 2rem 1rem;
+                width: 95%;
+                display: flex;
+                flex-direction: column;
+                border-radius: $border_radius;
+
+                a{
+                    text-decoration: none;
+                    color: $text;
+                    padding: .5rem 0;
+                }
+            }
+        }
+    }
+
+}

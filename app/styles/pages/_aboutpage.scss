@@ -1,0 +1,31 @@
+#aboutpage{
+    .about{
+        margin-bottom: 3rem;
+
+        .title{
+            color: $primary;
+            font-size: 1.45rem;
+        }
+
+        .content{
+            color: $text;
+            // font-size: .95rem;
+            padding-top: 1rem;
+        }
+    }
+}
+
+@media (max-width:800px) {
+    #aboutpage{
+        .about{
+            .title{
+                font-size: 1.25rem;
+            }
+    
+            .content{
+                // font-size: .95rem;
+                padding-top: .9rem;
+            }
+        }
+    }
+}

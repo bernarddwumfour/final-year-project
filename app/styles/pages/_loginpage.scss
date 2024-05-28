@@ -1,0 +1,11 @@
+#loginpage{
+    padding: 6rem 0;
+
+    .form{
+        @extend .center;
+        max-width: 550px;
+        background: #fff;
+        border-radius: $border_radius;
+        box-shadow: $box_shadow;
+    }
+}

@@ -1,0 +1,234 @@
+#homepage {
+  #hero {
+    // background: lightgrey;
+    padding: 5rem 1rem 9rem;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1500px;
+    @extend.center;
+
+    .intro {
+      padding: 5rem 0;
+      max-width: 800px;
+      width: 50%;
+
+      h1 {
+        font-size: 2.45rem;
+        color: $primary;
+      }
+
+      p {
+        font-size: 1.15rem;
+        padding: 1.5rem 0;
+        line-height: 140%;
+        color: $text;
+      }
+    }
+
+    .image {
+      // background: lightgrey;
+      width: 50%;
+      height: 550px;
+      position: relative;
+
+      img{
+        object-fit: cover;
+      }
+    }
+  }
+
+  #services {
+    background: lighten($primary, 42);
+
+    .servicegrid {
+      padding: 5rem 0;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(100px, 400px));
+      gap: 1rem;
+      justify-content: center;
+
+      .service {
+        // background: #fff;
+        border-radius: $border_radius;
+        padding: 1rem;
+
+        .image {
+          height: 300px;
+          // background: lightgrey;
+          position: relative;
+          max-width: 400px;
+          @extend .center;
+          
+
+          img{
+            object-fit: cover;
+          }
+        }
+
+        .details {
+          text-align: center;
+          .servicename {
+            color: $primary;
+            font-weight: 600;
+            padding: 0.75rem 0;
+          }
+
+          .description {
+            font-size: 0.9rem;
+            line-height: 160%;
+          }
+        }
+      }
+    }
+  }
+
+  #about {
+    .aboutflex {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      line-height: 190%;
+      padding: 5rem 0;
+
+      & > div {
+        width: 50%;
+      }
+
+      .image {
+        height: 500px;
+        background: lightgray;
+        position: relative;
+
+        img{
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  #testimonials {
+    background: lighten($primary, 42);
+
+    .testimonialsflex {
+      padding: 5rem 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 1rem;
+
+      .testimonial {
+        padding: 2rem;
+        background: #fff;
+        border-radius: $border_radius;
+
+        .name {
+          color: $primary;
+          padding: 0.5rem 0;
+          font-weight: 600;
+        }
+
+        .comment {
+          color: rgb(66, 66, 66);
+          line-height: 140%;
+          font-size: .93rem;
+          color: grey;
+          padding-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  #contact {
+    .contactflex {
+      padding: 5rem 0;
+      display: flex;
+      gap: 3rem;
+
+      & > div {
+        width: 50%;
+      }
+
+      .image {
+        height: 500px;
+        background: lightgrey;
+        position: relative;
+        
+        img{
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+}
+
+@media (max-width: 950px) {
+  #homepage {
+    #hero {
+      padding: 0 1rem 3rem;
+      flex-direction: column-reverse;
+      gap: 1rem;
+
+      & > div {
+        width: 100% !important;
+        gap: 2rem;
+        padding-top: 1rem !important;
+      }
+
+      .intro {
+        padding: 3rem 0;
+
+        h1 {
+          font-size: 1.85rem;
+          color: $primary;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+      }
+
+      .image {
+        height: 400px;
+      }
+    }
+
+    #about {
+      .aboutflex {
+        flex-direction: column-reverse;
+
+        & > div {
+          width: 100%;
+          gap: 2rem;
+        }
+      }
+    }
+
+    #contact {
+      .contactflex {
+        flex-direction: column;
+
+        & > div {
+          width: 100%;
+          gap: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  #services {
+    .servicegrid {
+      grid-template-columns: repeat(1, 1fr) !important;
+    }
+  }
+
+  #testimonials {
+    .testimonialsflex {
+      flex-direction: column !important;
+    }
+  }
+}

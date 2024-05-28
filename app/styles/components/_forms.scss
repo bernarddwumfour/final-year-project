@@ -1,0 +1,72 @@
+
+.form{
+    width: 100%;
+    padding: 2rem 1rem;
+
+    .label{
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: 600;
+        padding-bottom: 1.5rem;
+        color: $primary;
+    }
+
+    form{
+        .flex{
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .control{
+            display: flex;
+            flex-direction: column-reverse;
+            gap: .3rem;
+            padding-bottom: 1rem;
+            width: 100%;
+
+            input,textarea{
+                width: 100%;
+                border: 1px solid lightgrey;
+                outline: none;
+                padding: .65rem;
+                border-radius: $border_radius;
+
+                &:focus{
+                    border-color: $primary;
+
+                    &+label{
+                        color: $primary;
+                    }
+                }
+            }
+
+            textarea{
+                resize: none;
+                height: 5rem;
+            }
+
+            small{
+                color: rgb(255, 55, 0);
+                font-size: .85rem;
+            }
+
+            label{
+                font-size: .9rem;
+                color: grey;
+            }
+        }
+
+        .redirect{
+            padding: .75rem 0;
+            color: $text;
+
+            a{
+                color: $primary
+            }
+        }
+
+        .click{
+            @extend .center;
+        }
+    }
+}
