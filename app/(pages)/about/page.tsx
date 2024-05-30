@@ -11,10 +11,10 @@ const Aboutpage = () => {
           <div className="about">
             <h3 className="title">Introduction</h3>
             <p className="content">
-              Welcome to [Your Platform Name]! We're here to make understanding
-              privacy policies a breeze. In today's digital world, it's
+              Welcome to [Your Platform Name]! We&apos;re here to make understanding
+              privacy policies a breeze. In today&apos;s digital world, it&apos;s
               important to know how your personal information is used online.
-              But let's face it, privacy policies can be super confusing. That's
+              But let&apos;s face it, privacy policies can be super confusing. That&apos;s
               where we step in.
             </p>
           </div>
@@ -35,8 +35,8 @@ const Aboutpage = () => {
             <p className="content">
               We dream of a world where privacy is easy to understand for
               everyone. Imagine a place where you can trust the companies you
-              share your data with. That's the world we're working towards. With
-              our platform, we're leading the way in making privacy policies
+              share your data with. That&apos;s the world we&apos;re working towards. With
+              our platform, we&apos;re leading the way in making privacy policies
               simple and clear.
             </p>
           </div>
@@ -47,15 +47,15 @@ const Aboutpage = () => {
               At [Your Platform Name], we take complicated privacy policies and
               make them easy to understand. We use fancy technology to analyze
               all that legal jargon and give you the important bits in plain
-              English. So, whether you're a regular internet user or a business
-              owner, you can know exactly what you're agreeing to.
+              English. So, whether you&apos;re a regular internet user or a business
+              owner, you can know exactly what you&apos;re agreeing to.
             </p>
           </div>
 
           <div className="about">
             <h3 className="title">How We Do It</h3>
             <p className="content">
-              We've got a team of smart folks who know their stuff. We're always
+              We&apos;ve got a team of smart folks who know their stuff. We&apos;re always
               improving our platform to make it even better. By staying on top
               of the latest tech and laws, we make sure you get the best, most
               reliable info about your privacy.
@@ -65,10 +65,10 @@ const Aboutpage = () => {
           <div className="about">
             <h3 className="title">Our Commitment</h3>
             <p className="content">
-              We're serious about keeping your info safe. Your privacy is our
+              We&apos;re serious about keeping your info safe. Your privacy is our
               top priority. We follow strict rules to make sure your data stays
               private and secure. And if you ever have any questions or
-              concerns, we're always here to help.
+              concerns, we&apos;re always here to help.
             </p>
           </div>
 
@@ -76,9 +76,9 @@ const Aboutpage = () => {
             <h3 className="title">Join Us</h3>
             <p className="content">
               Join us in our mission to make privacy policies easy to
-              understand. Whether you're a regular internet user or a business
-              owner, we're here to help you navigate the world of privacy.
-              Together, let's make sure privacy stays a priority for everyone.
+              understand. Whether you&apos;re a regular internet user or a business
+              owner, we&apos;re here to help you navigate the world of privacy.
+              Together, let&apos;s make sure privacy stays a priority for everyone.
             </p>
           </div>
         </div>

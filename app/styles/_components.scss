@@ -9,6 +9,10 @@
     border: none;
     outline: none;
 
+    &:hover{
+        box-shadow: 0 0 .5rem lighten($primary,25);
+    }
+
     &.secondary{
         background: #fff;
         color: $primary;

@@ -1,11 +1,16 @@
 'use client'
-import React, { useContext } from 'react'
+import React, { ReactNode, useContext } from 'react'
 import { Appcontext } from '../contexts/AppcontextProvider';
+import Formmodal from './modals/Formmodal';
+import Loadingmodal from './modals/Loadingmodal';
+import Policymodal from './modals/Policymodal';
+
 
 
 const Modal = () => {
 
-  const {togglemodal,modalopen} = useContext<appcontext>(Appcontext);
+
+  const {togglemodal,modalopen ,modalcontent} = useContext<appcontext>(Appcontext);
 
 
   return (
@@ -13,24 +18,9 @@ const Modal = () => {
         <div className="backdrop" onClick={togglemodal}>
         </div>
         <div className="modal">
-            <div className="form">
-              <form action="">
-                <p className="label">Upload Privacy Policy To Summarize</p>
-              <div className="control">
-                    <input type="text" name="email" />
-                    <label htmlFor="mail">URL</label>
-                  </div>
-
-                  <p className="redirect" style={{textAlign:"center"}}>OR</p>
-
-                  <div className="control">
-                    <textarea name="message" id="message"></textarea>
-                    <label htmlFor="message">  Plain Text</label>
-                  </div>
-
-                  <button className="click">Upload Policy</button>
-              </form>
-            </div>
+          {modalcontent == "form" && <Formmodal/>}
+          {modalcontent == "loading" && <Loadingmodal/>}
+          {modalcontent == "policy" && <Policymodal/>}
         </div>
     </div>
   )

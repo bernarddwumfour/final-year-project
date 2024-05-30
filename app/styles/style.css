@@ -12,7 +12,7 @@ main {
   padding-top: 6rem;
 }
 
-.center, #loginpage .form, #homepage #services .servicegrid .service .image, #homepage #hero, .form form .click, header nav, .page {
+.center, #loginpage .form, #homepage #services .servicegrid .service .image, #homepage #hero, #modal .modal > div.policy, .form form .click, header nav, .page .subheading::before, .page {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -23,7 +23,7 @@ main {
   padding: 3rem 1rem 4rem;
 }
 .page .heading {
-  font-size: 1.65rem;
+  font-size: 1.75rem;
   color: rgb(146, 87, 201);
   padding-bottom: 1rem;
   text-align: center;
@@ -32,6 +32,17 @@ main {
 .page .subheading {
   font-size: 1.05rem;
   text-align: center;
+  position: relative;
+  padding: 0 1rem;
+}
+.page .subheading::before {
+  position: absolute;
+  content: "";
+  width: 5rem;
+  height: 3px;
+  border-radius: 2rem;
+  background: rgb(40, 56, 150);
+  top: 170%;
 }
 
 @media (max-width: 800px) {
@@ -57,6 +68,9 @@ main {
   border: none;
   outline: none;
 }
+.click:hover {
+  box-shadow: 0 0 0.5rem #d1b7e8;
+}
 .click.secondary {
   background: #fff;
   color: rgb(146, 87, 201);
@@ -65,11 +79,8 @@ main {
 header {
   position: fixed;
   width: 100%;
-  background: rgba(255, 255, 255, 0.541);
   padding-top: 1.5rem;
   z-index: 10;
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
 }
 header nav {
   background: rgb(146, 87, 201);
@@ -179,7 +190,7 @@ footer div p {
 }
 .form .label {
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 600;
   padding-bottom: 1.5rem;
   color: rgb(146, 87, 201);
@@ -228,37 +239,96 @@ footer div p {
 .form form .redirect a {
   color: rgb(146, 87, 201);
 }
+#modal {
+  position: fixed;
+  width: 100%;
+  height: 10vh;
+  z-index: 9;
+  top: 0;
+  left: 0;
+}
 #modal.close {
   display: none;
 }
 #modal .backdrop {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100vh;
-  background: rgba(255, 255, 255, 0.438);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.616);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   z-index: 9;
-  display: flex;
   top: 0;
   left: 0;
 }
 #modal .modal {
+  position: absolute;
   padding: 0.65rem;
-  position: fixed;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 8rem;
+  transform: translateX(-50%);
   z-index: 11;
-  width: 100%;
-  max-width: 650px;
-}
-#modal .modal .form {
+  width: -moz-max-content;
+  width: max-content;
+  max-height: calc(100vh - 12rem);
   background: #fff;
   border-radius: 0.55rem;
   box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.3294117647);
+  overflow-y: scroll;
+}
+#modal .modal::-webkit-scrollbar {
+  display: none;
+}
+#modal .modal > div {
+  width: calc(100vw - 3rem);
+}
+#modal .modal > div.form {
+  max-width: 650px;
+}
+#modal .modal > div.loading {
+  max-width: 300px;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+#modal .modal > div.policy {
+  max-width: 1200px;
+  padding: 1rem;
+}
+#modal .modal > div.policy .heading {
+  text-align: center;
+  font-size: 1.1rem;
+  color: rgb(146, 87, 201);
+  font-weight: 600;
+}
+#modal .modal > div.policy .category {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  margin: 2rem 0;
+  padding: 0.65rem;
+  align-items: center;
+  font-size: 0.9rem;
+  background: #f9f5fc;
+  border-radius: 0.55rem;
+}
+#modal .modal > div.policy .category:first-child {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(94, 94, 94);
+}
+#modal .modal > div.policy .category div.image {
+  height: 180px;
+  background: lightgrey;
+}
+#modal .modal > div.policy .actions {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
 }
 
+#homepage {
+  position: relative;
+  overflow-x: hidden;
+}
 #homepage #hero {
   padding: 5rem 1rem 9rem;
   display: flex;
@@ -336,6 +406,9 @@ footer div p {
 #homepage #about .aboutflex > div {
   width: 50%;
 }
+#homepage #about .aboutflex .abouttext {
+  font-size: 1.1rem;
+}
 #homepage #about .aboutflex .image {
   height: 500px;
   background: lightgray;
@@ -405,11 +478,11 @@ footer div p {
     padding: 3rem 0;
   }
   #homepage #hero .intro h1 {
-    font-size: 1.85rem;
+    font-size: 1.65rem;
     color: rgb(146, 87, 201);
   }
   #homepage #hero .intro p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   #homepage #hero .image {
     height: 400px;

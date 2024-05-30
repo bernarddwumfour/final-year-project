@@ -7,9 +7,11 @@ type faq = {
 
 type faqs = faq[]
 
-type appcontext = {
+interface appcontext  {
     modalopen : Boolean,
-    togglemodal : ()=>void
+    togglemodal : ()=>void,
+    modalcontent : String,
+    togglemodalcontent : (state:string)=> void,
 }
 
 type voidfunction = ()=>void

@@ -5,10 +5,15 @@ import Modal from "./components/Modal";
 
 
 export default function Home() {
-  
   return (
     <main id="homepage">
-      {<Modal/>}
+
+        <div className="svg">
+        <Image src={'/blob.svg'} fill alt="svg"/>
+        </div>
+
+      <Modal/>
+
       <div id="hero">
         <div className="intro">
           <div>
@@ -16,14 +21,16 @@ export default function Home() {
             <p>
               Tired of scrolling through endless legal jargon? We're here to
               help. Our Privacy Policy Summarizer transforms complex, lengthy
-              policies into concise, easy-to-understand summaries.{" "}
+              policies into concise, easy-to-understand summaries.
             </p>
-            <Homebutton/>
+            <Homebutton />
           </div>
+
+          
         </div>
 
         <div className="image">
-          <Image src={'/homeimage.jpg'} alt="homeimage" fill/>
+          <Image src={"/homeimage.png"} alt="homeimage" fill />
         </div>
       </div>
 
@@ -37,7 +44,7 @@ export default function Home() {
           <div className="servicegrid">
             <div className="service">
               <div className="image">
-              <Image src={'/upload.png'} alt="home1" fill/>
+                <Image src={"/upload.png"} alt="home1" fill />
               </div>
               <div className="details">
                 <p className="servicename">Upload or Link</p>
@@ -49,7 +56,7 @@ export default function Home() {
             </div>
             <div className="service">
               <div className="image">
-              <Image src={'/process.png'} alt="home1" fill/>
+                <Image src={"/process.png"} alt="home1" fill />
               </div>
               <div className="details">
                 <p className="servicename">Automated Analysis</p>
@@ -61,7 +68,7 @@ export default function Home() {
             </div>
             <div className="service">
               <div className="image">
-              <Image src={'/download.png'} alt="home1" fill/>
+                <Image src={"/download.png"} alt="home1" fill />
               </div>
               <div className="details">
                 <p className="servicename">Clear Summaries.</p>
@@ -99,7 +106,7 @@ export default function Home() {
             </div>
 
             <div className="image">
-            <Image src={'/aboutimage.jpg'} alt="homeimage" fill/>
+              <Image src={"/aboutimage.jpg"} alt="homeimage" fill />
             </div>
           </div>
         </div>
@@ -146,13 +153,11 @@ export default function Home() {
       <div id="contact">
         <div className="page">
           <h1 className="heading">Get in Touch.</h1>
-          <p className="subheading">
-          Reach Out to Us
-          </p>
+          <p className="subheading">Reach Out to Us</p>
 
           <div className="contactflex">
             <div className="image">
-            <Image src={'/contactimage.jpg'} alt="homeimage" fill/>
+              <Image src={"/contactimage.jpg"} alt="homeimage" fill />
             </div>
             <div className="form">
               <form action="">

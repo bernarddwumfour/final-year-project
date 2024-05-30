@@ -1,4 +1,18 @@
 #homepage {
+
+  position: relative;
+  overflow-x: hidden;
+
+  // &>.svg{
+  //   position: absolute;
+  //   width: 1500px;
+  //   height: 1500px;
+  //   top: -27rem;
+  //   right: -25rem;
+  //   // background: $primary;
+  //   opacity: .0.8;
+  // }
+
   #hero {
     // background: lightgrey;
     padding: 5rem 1rem 9rem;
@@ -96,6 +110,10 @@
         width: 50%;
       }
 
+      .abouttext{
+        font-size: 1.1rem;
+      }
+
       .image {
         height: 500px;
         background: lightgray;
@@ -122,6 +140,9 @@
         padding: 2rem;
         background: #fff;
         border-radius: $border_radius;
+        // border-bottom: 5px solid $primary;
+        // display: flex;
+        // flex-direction: column-reverse;
 
         .name {
           color: $primary;
@@ -181,12 +202,12 @@
         padding: 3rem 0;
 
         h1 {
-          font-size: 1.85rem;
+          font-size: 1.65rem;
           color: $primary;
         }
 
         p {
-          font-size: 1rem;
+          font-size: .9rem;
         }
       }
 
