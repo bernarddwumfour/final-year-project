@@ -68,23 +68,30 @@
           .category {
             display: grid;
             grid-template-columns: 200px 1fr 200px;
-            margin: 2rem 0;
+            margin: 1rem 0;
             padding: .65rem;
             align-items: center;
             font-size: .9rem;
-            background: lighten($primary,41);
             border-radius: $border_radius;
+            gap: 2rem;
             
-            &:first-child{
-              font-size: 1rem;
+            &:first-of-type{
+              background: lighten($primary,41);
+              font-size: .95rem;
               font-weight: 600;
-              color: $text;
+              color: $primary;
               
             }
 
             div.image{
               height: 180px;
-              background: lightgrey;
+              // background: lightgrey;
+              position: relative;
+              
+              img{
+                object-fit: contain;
+                transform: scale(.8);
+              }
             }
           }
 

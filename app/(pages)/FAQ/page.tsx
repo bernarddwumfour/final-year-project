@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from "react";
-import Breadcrums from "./components/Breadcrums";
+import Breadcrums from "./(components)/Breadcrums";
 
 const Faq = () => {
 
@@ -46,7 +46,7 @@ const Faq = () => {
        Ever clicked "accept" on a privacy policy without truly understanding it? You're not alone. Privacy policies are often lengthy and complex, leaving us confused about our data. Our Privacy Policy Summarization tool cuts through the legalese to give you the key information you need in seconds. Simply enter a website's URL, and we'll provide a clear, concise breakdown of their data practices. Take back control of your online privacy – start exploring with our FAQs today!
        </p>
 
-      {faq.length>0 && faq.map(item => <Breadcrums/> )}       
+      {faq && faq.map((item,index) => <Breadcrums item={item} key={index}/> )}       
          
       </div>
     </main>

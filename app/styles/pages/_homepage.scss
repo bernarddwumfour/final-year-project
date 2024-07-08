@@ -1,7 +1,7 @@
 #homepage {
 
-  position: relative;
-  overflow-x: hidden;
+  // position: relative;
+  // overflow-x: hidden;
 
   // &>.svg{
   //   position: absolute;
@@ -15,7 +15,7 @@
 
   #hero {
     // background: lightgrey;
-    padding: 5rem 1rem 9rem;
+    padding: 4rem 1rem 9rem;
     display: flex;
     gap: 3rem;
     align-items: center;
@@ -24,7 +24,7 @@
     @extend.center;
 
     .intro {
-      padding: 5rem 0;
+      padding: 4rem 0;
       max-width: 800px;
       width: 50%;
 
@@ -34,10 +34,27 @@
       }
 
       p {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
         padding: 1.5rem 0;
         line-height: 140%;
         color: $text;
+      }
+
+      .socialstext{
+        padding: 2.5rem 0 1rem;
+        font-size: .9rem;
+        color: lighten($primary,5);
+        font-weight: 600;
+      }
+
+      .socials{
+        font-size: 1.81rem;
+        display: flex;
+        gap: 1.5rem;
+         i{
+          color: lightgrey;
+         }
+        // justify-content: center;
       }
     }
 
@@ -99,6 +116,7 @@
   }
 
   #about {
+   
     .aboutflex {
       display: flex;
       gap: 3rem;

@@ -2,35 +2,42 @@ import Image from "next/image";
 import Link from "next/link";
 import Homebutton from "./components/Homebutton";
 import Modal from "./components/Modal";
-
+import { FaFacebookF, FaXTwitter } from "react-icons/fa6";
+import { FaSnapchatGhost } from "react-icons/fa";
+import { RiInstagramFill } from "react-icons/ri";
 
 export default function Home() {
   return (
     <main id="homepage">
+      {/* <div className="svg">
+        <Image src={"/blob.svg"} fill alt="svg" />
+      </div> */}
 
-        <div className="svg">
-        <Image src={'/blob.svg'} fill alt="svg"/>
-        </div>
-
-      <Modal/>
+      <Modal />
 
       <div id="hero">
         <div className="intro">
           <div>
             <h1>Simplifying Privacy, One Policy at a Time</h1>
             <p>
-              Tired of scrolling through endless legal jargon? We're here to
+              Tired of scrolling through endless legal jargon? We&apos;re here to
               help. Our Privacy Policy Summarizer transforms complex, lengthy
               policies into concise, easy-to-understand summaries.
             </p>
             <Homebutton />
-          </div>
 
-          
+            <p className="socialstext">View Summarized Policies For popular Apps</p>
+            <div className="socials">
+              <FaXTwitter />
+              <FaSnapchatGhost />
+              <RiInstagramFill />
+              <FaFacebookF />
+            </div>
+          </div>
         </div>
 
         <div className="image">
-          <Image src={"/homeimage.png"} alt="homeimage" fill />
+          <Image src={"/homeimage.jpg"} alt="homeimage" fill />
         </div>
       </div>
 
@@ -95,7 +102,7 @@ export default function Home() {
               accessible and understandable for everyone. In a world where
               digital interactions are increasingly complex, we recognized the
               need for a tool that simplifies the often-confusing language of
-              privacy policies. That's why we've created this platform – to
+              privacy policies. That&apos;s why we&apos;ve created this platform – to
               empower individuals and businesses alike with clear, concise
               summaries of their privacy rights and obligations.
               <br />
@@ -132,7 +139,7 @@ export default function Home() {
               <p className="comment">
                 I love how easy it is to use this platform. Privacy policies
                 used to be a mystery to me, but now I feel empowered knowing
-                exactly what I'm agreeing to when I use online services. Highly
+                exactly what I&apos;m agreeing to when I use online services. Highly
                 recommended!
               </p>
               <p className="name">Mark, Everyday User</p>
@@ -140,8 +147,8 @@ export default function Home() {
 
             <div className="testimonial">
               <p className="comment">
-                As a privacy advocate, I'm thrilled to see a platform like this
-                making privacy policies more accessible. It's a game-changer for
+                As a privacy advocate, I&apos;m thrilled to see a platform like this
+                making privacy policies more accessible. It&apos;s a game-changer for
                 ensuring that individuals understand their rights .
               </p>
               <p className="name">Alex, Online Consumer.</p>

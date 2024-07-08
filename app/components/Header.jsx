@@ -9,7 +9,7 @@ const Header = () => {
     <header className={`${navopen ? "active" : ""}`}>
       <nav>
         <Link href="/" className="logo">
-          Policy
+          PolEasy
         </Link>
 
         <menu>

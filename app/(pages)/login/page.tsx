@@ -21,7 +21,7 @@ const Login = () => {
             <button className="click">Login</button>
 
             <p className="redirect">
-              Don't have an account ?{" "}
+              Don&apos;t have an account ?
               <Link href="/signup"> Create one here</Link>
             </p>
           </form>

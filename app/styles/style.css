@@ -24,7 +24,7 @@ main {
 }
 .page .heading {
   font-size: 1.75rem;
-  color: rgb(146, 87, 201);
+  color: rgb(92, 79, 209);
   padding-bottom: 1rem;
   text-align: center;
   padding-top: 3rem;
@@ -41,7 +41,7 @@ main {
   width: 5rem;
   height: 3px;
   border-radius: 2rem;
-  background: rgb(40, 56, 150);
+  background: rgb(77, 95, 199);
   top: 170%;
 }
 
@@ -59,7 +59,7 @@ main {
 }
 .click {
   color: #fff;
-  background: rgb(146, 87, 201);
+  background: rgb(92, 79, 209);
   text-decoration: none;
   padding: 0.75rem 1.25rem;
   display: inline-block;
@@ -69,27 +69,30 @@ main {
   outline: none;
 }
 .click:hover {
-  box-shadow: 0 0 0.5rem #d1b7e8;
+  box-shadow: 0 0 0.5rem #bab4eb;
 }
 .click.secondary {
   background: #fff;
-  color: rgb(146, 87, 201);
+  color: rgb(92, 79, 209);
 }
 
 header {
   position: fixed;
   width: 100%;
-  padding-top: 1.5rem;
+  padding-top: 1.3rem;
   z-index: 10;
+  background: rgba(255, 255, 255, 0.541);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }
 header nav {
-  background: rgb(146, 87, 201);
+  background: rgb(92, 79, 209);
   width: 95%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  padding: 0.85rem 1.25rem;
+  padding: 0.85rem 1rem;
   border-radius: 1.5rem;
   box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.3294117647);
 }
@@ -174,7 +177,7 @@ header > menu {
   }
 }
 footer {
-  background: #9f6acf;
+  background: #6f63d6;
   padding: 4rem 3rem;
 }
 footer div {
@@ -193,7 +196,7 @@ footer div p {
   font-size: 1.1rem;
   font-weight: 600;
   padding-bottom: 1.5rem;
-  color: rgb(146, 87, 201);
+  color: rgb(92, 79, 209);
 }
 .form form .flex {
   display: flex;
@@ -215,10 +218,10 @@ footer div p {
   border-radius: 0.55rem;
 }
 .form form .control input:focus, .form form .control textarea:focus {
-  border-color: rgb(146, 87, 201);
+  border-color: rgb(92, 79, 209);
 }
 .form form .control input:focus + label, .form form .control textarea:focus + label {
-  color: rgb(146, 87, 201);
+  color: rgb(92, 79, 209);
 }
 .form form .control textarea {
   resize: none;
@@ -237,7 +240,7 @@ footer div p {
   color: rgb(94, 94, 94);
 }
 .form form .redirect a {
-  color: rgb(146, 87, 201);
+  color: rgb(92, 79, 209);
 }
 #modal {
   position: fixed;
@@ -297,27 +300,33 @@ footer div p {
 #modal .modal > div.policy .heading {
   text-align: center;
   font-size: 1.1rem;
-  color: rgb(146, 87, 201);
+  color: rgb(92, 79, 209);
   font-weight: 600;
 }
 #modal .modal > div.policy .category {
   display: grid;
   grid-template-columns: 200px 1fr 200px;
-  margin: 2rem 0;
+  margin: 1rem 0;
   padding: 0.65rem;
   align-items: center;
   font-size: 0.9rem;
-  background: #f9f5fc;
   border-radius: 0.55rem;
+  gap: 2rem;
 }
-#modal .modal > div.policy .category:first-child {
-  font-size: 1rem;
+#modal .modal > div.policy .category:first-of-type {
+  background: #f6f5fc;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: rgb(94, 94, 94);
+  color: rgb(92, 79, 209);
 }
 #modal .modal > div.policy .category div.image {
   height: 180px;
-  background: lightgrey;
+  position: relative;
+}
+#modal .modal > div.policy .category div.image img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  transform: scale(0.8);
 }
 #modal .modal > div.policy .actions {
   display: flex;
@@ -325,12 +334,8 @@ footer div p {
   gap: 3rem;
 }
 
-#homepage {
-  position: relative;
-  overflow-x: hidden;
-}
 #homepage #hero {
-  padding: 5rem 1rem 9rem;
+  padding: 4rem 1rem 9rem;
   display: flex;
   gap: 3rem;
   align-items: center;
@@ -338,19 +343,33 @@ footer div p {
   max-width: 1500px;
 }
 #homepage #hero .intro {
-  padding: 5rem 0;
+  padding: 4rem 0;
   max-width: 800px;
   width: 50%;
 }
 #homepage #hero .intro h1 {
   font-size: 2.45rem;
-  color: rgb(146, 87, 201);
+  color: rgb(92, 79, 209);
 }
 #homepage #hero .intro p {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   padding: 1.5rem 0;
   line-height: 140%;
   color: rgb(94, 94, 94);
+}
+#homepage #hero .intro .socialstext {
+  padding: 2.5rem 0 1rem;
+  font-size: 0.9rem;
+  color: #6f63d6;
+  font-weight: 600;
+}
+#homepage #hero .intro .socials {
+  font-size: 1.81rem;
+  display: flex;
+  gap: 1.5rem;
+}
+#homepage #hero .intro .socials i {
+  color: lightgrey;
 }
 #homepage #hero .image {
   width: 50%;
@@ -362,7 +381,7 @@ footer div p {
      object-fit: cover;
 }
 #homepage #services {
-  background: #fbf9fd;
+  background: #f9f9fd;
 }
 #homepage #services .servicegrid {
   padding: 5rem 0;
@@ -388,7 +407,7 @@ footer div p {
   text-align: center;
 }
 #homepage #services .servicegrid .service .details .servicename {
-  color: rgb(146, 87, 201);
+  color: rgb(92, 79, 209);
   font-weight: 600;
   padding: 0.75rem 0;
 }
@@ -419,7 +438,7 @@ footer div p {
      object-fit: cover;
 }
 #homepage #testimonials {
-  background: #fbf9fd;
+  background: #f9f9fd;
 }
 #homepage #testimonials .testimonialsflex {
   padding: 5rem 0;
@@ -434,7 +453,7 @@ footer div p {
   border-radius: 0.55rem;
 }
 #homepage #testimonials .testimonialsflex .testimonial .name {
-  color: rgb(146, 87, 201);
+  color: rgb(92, 79, 209);
   padding: 0.5rem 0;
   font-weight: 600;
 }
@@ -479,7 +498,7 @@ footer div p {
   }
   #homepage #hero .intro h1 {
     font-size: 1.65rem;
-    color: rgb(146, 87, 201);
+    color: rgb(92, 79, 209);
   }
   #homepage #hero .intro p {
     font-size: 0.9rem;
@@ -567,7 +586,7 @@ footer div p {
   margin-bottom: 3rem;
 }
 #aboutpage .about .title {
-  color: rgb(146, 87, 201);
+  color: rgb(92, 79, 209);
   font-size: 1.45rem;
 }
 #aboutpage .about .content {
@@ -588,7 +607,7 @@ footer div p {
 }
 #faqpage .breadcrums .title {
   box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.3294117647);
-  background: #9f6acf;
+  background: #6f63d6;
   color: #fff;
   padding: 1rem;
   border-radius: 0.55rem;

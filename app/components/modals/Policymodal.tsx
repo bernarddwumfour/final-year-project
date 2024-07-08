@@ -1,4 +1,5 @@
 import { Appcontext } from '@/app/contexts/AppcontextProvider'
+import Image from 'next/image'
 import React, { useContext } from 'react'
 
 const Policymodal = () => {
@@ -17,13 +18,13 @@ const Policymodal = () => {
             </p>
          <div className="category">
                 <p className="categoryname">
-                    category
+                    Category
                 </p>
                 <p className="summary">
                     Summary
                 </p>
                 <p className="image">
-                    image
+                    Infographics
                 </p>
             </div>
 
@@ -35,50 +36,25 @@ const Policymodal = () => {
                 <p className="summary">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, accusamus labore nisi nam aut porro aperiam dolores veritatis.
                 </p>
-                <div className="image"></div>
+                <div className="image">
+                <Image src={"/collecting.jpg"} alt="homeimage" fill />
+                </div>
             </div>
 
             
             <div className="category">
                 <p className="categoryname">
-                    Data Collection
+                    User Rights
                 </p>
                 <p className="summary">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, accusamus labore nisi nam aut porro aperiam dolores veritatis.
                 </p>
-                <div className="image"></div>
+                <div className="image">
+                <Image src={"/right.png"} alt="homeimage" fill />
+                </div>
             </div>
 
-            <div className="category">
-                <p className="categoryname">
-                    Data Collection
-                </p>
-                <p className="summary">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, accusamus labore nisi nam aut porro aperiam dolores veritatis.
-                </p>
-                <div className="image"></div>
-            </div>
-
-            <div className="category">
-                <p className="categoryname">
-                    Data Collection
-                </p>
-                <p className="summary">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, accusamus labore nisi nam aut porro aperiam dolores veritatis.
-                </p>
-                <div className="image"></div>
-            </div>
-
-            <div className="category">
-                <p className="categoryname">
-                    Data Collection
-                </p>
-                <p className="summary">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, accusamus labore nisi nam aut porro aperiam dolores veritatis.
-                </p>
-                <div className="image"></div>
-            </div>
-
+           
             <div className="actions">
             <button className="click">Save</button>
             <button className="click secondary" onClick={cancel}>Cancel</button>
