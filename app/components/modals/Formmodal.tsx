@@ -18,14 +18,14 @@ const Formmodal = () => {
         <div className="form">
           <form action="">
             <p className="label">Upload Privacy Policy To Summarize</p>
-            <div className="control">
+            {/* <div className="control">
               <input type="text" name="email" />
               <label htmlFor="mail">URL</label>
             </div>
 
             <p className="redirect" style={{ textAlign: "center" }}>
               OR
-            </p>
+            </p> */}
 
             <div className="control">
               <textarea name="message" id="message"></textarea>
