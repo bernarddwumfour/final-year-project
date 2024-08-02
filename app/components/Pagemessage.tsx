@@ -4,7 +4,7 @@ import { Appcontext } from "../contexts/AppcontextProvider";
 
 const Pagemessage = () => {
   const { pagemessagestate, pagemessage, pagemessagetype } =
-  useContext(Appcontext);
+  useContext<appcontext>(Appcontext);
  
   return (
     <div

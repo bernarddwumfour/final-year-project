@@ -164,7 +164,7 @@ header > menu {
   }
   header.active > menu {
     position: relative;
-    background: rgba(10, 16, 4, 0.6);
+    background: rgba(6, 10, 25, 0.85);
     left: 50%;
     transform: translateX(-50%);
     margin-top: 0.5rem;

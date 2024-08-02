@@ -16,10 +16,11 @@ const DisplayingErrorMessagesSchema = Yup.object().shape({
 
 const signin = async (data : {email :string , password : string})=>{
 
-  let url  = process.env.API_URL
-  
+  const url :string  = process.env.API_URL as string
+  // alert(url)
+
   try {
-    const res = await fetch(`${url}/login`, {
+    const res = await fetch(`/api/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -57,13 +58,13 @@ const Login = () => {
                 let res = await signin(values);
                 if (res.ok) {
                   let data = await res.json();
-                  showpagemessage(`Login Successful`,'info')
-                  alert("Login succesful")
-                  // router.push("/");
+                  showpagemessage(`Login Successful`,'success')
+                  // alert("Login succesful")
+                  router.push("/");
                 } else {
                   // Display error message
                   let errorData = await res.json();
-                  showpagemessage(`Error: ${errorData.message}`, 'error');
+                  showpagemessage(` ${errorData.message}`, 'error');
                   console.error('Sign in error:', errorData);
                 }
               } catch (error) {

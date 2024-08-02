@@ -103,7 +103,7 @@ header{
         &.active{
             &>menu{
                 position: relative;
-                background: rgba(10, 16, 4 ,.6);
+                background: darken(rgba(10, 16, 41, 0.85),4);
                 left: 50%;
                 transform: translateX(-50%);
                 margin-top: .5rem;

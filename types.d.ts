@@ -23,7 +23,7 @@ interface appcontext  {
     pagemessage : string,
     pagemessagestate : Boolean,
     pagemessagetype :string,
-    showpagemessage : (message:string,type:"info"|"success"|"error")=>void,
+    showpagemessage : (message:string,type:"info"|"success"|"error")=>void
 }
 
 type voidfunction = ()=>void

@@ -1,9 +1,10 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { useRouter } from "next/navigation";
+import { Appcontext } from "@/app/contexts/AppcontextProvider";
 
 const DisplayingErrorMessagesSchema = Yup.object().shape({
   firstname: Yup.string()
@@ -29,7 +30,7 @@ const createuser = async (data: {
   let url : string = process.env.API_URL as string
 
   try {
-    const res = await fetch(`${url}/signup`, {
+    const res = await fetch(`/api/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -47,6 +48,7 @@ const createuser = async (data: {
 
 const Signup = () => {
   const router = useRouter();
+  const {showpagemessage} = useContext(Appcontext)
   return (
     <main id="loginpage">
       <div className="page">
@@ -67,11 +69,12 @@ const Signup = () => {
                 if (res.ok) {
                   let data = await res.json();
                   console.log(data);
+                  showpagemessage('Account Created Successfully', "success");
                   router.push("/login");
                 } else {
                   // Display error message
                   let errorData = await res.json();
-                  alert(`Error: ${errorData.message}`);
+                  showpagemessage(`${errorData.message}`,"error");
                 }
               } catch (error) {
                 console.error('Sign up error:', error);
@@ -134,7 +137,7 @@ const Signup = () => {
                 </div>
 
                 <button className="click" type="submit">
-                  Login
+                  Signup
                 </button>
 
                 <p className="redirect">

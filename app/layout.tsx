@@ -21,10 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <AppcontextProvider>
         <Header />
-        <Pagemessage/>
-        <AppcontextProvider>{children}</AppcontextProvider>
+          <Pagemessage />
+          {children}
         <Footer />
+        </AppcontextProvider>
       </body>
     </html>
   );
