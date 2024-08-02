@@ -26,19 +26,26 @@ export default function Home() {
             </p>
             <Homebutton />
 
-            <p className="socialstext">View Summarized Policies For popular Apps</p>
             <div className="socials">
+              <span style={{padding: ".6rem .35rem .25rem",borderRadius: ".7rem"}}>
               <FaXTwitter />
+              </span>
+              <span style={{padding: ".6rem .35rem .25rem",borderRadius: ".7rem"}}>
               <FaSnapchatGhost />
+              </span>
+              <span style={{padding: ".6rem .35rem .25rem",borderRadius: ".7rem"}}>
               <RiInstagramFill />
+              </span>
+              <span style={{padding: ".6rem .35rem .25rem",borderRadius: ".7rem"}}>
               <FaFacebookF />
+              </span>
             </div>
           </div>
         </div>
 
-        <div className="image">
+        {/* <div className="image">
           <Image src={"/homeimage.jpg"} alt="homeimage" fill />
-        </div>
+        </div> */}
       </div>
 
       <div id="services">

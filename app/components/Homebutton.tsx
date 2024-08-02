@@ -8,7 +8,7 @@ const Homebutton = () => {
 
   return (
     <>
-    <button  className="click" onClick={togglemodal}>
+    <button  className="click" style={{padding : "1rem 1.7rem",fontSize : "1rem"}} onClick={togglemodal}>
       Upload Policy    
     </button>
     </>

@@ -1,6 +1,6 @@
 #faqpage{
     .breadcrums{
-        margin: 2rem 0;
+        margin: 3rem 0;
         
         .title{
             box-shadow: $box_shadow;
@@ -12,8 +12,10 @@
     
         .body{
             line-height: 150%;
-            color: $text;
-            border: 1px solid lightgrey;
+            color: #fff;
+            // border: 1px solid lightgrey;
+            box-shadow: $box_shadow;
+            background: lighten($secondary ,1);
             margin-top: .41rem;
             border-radius: $border_radius;
             height: 0;
@@ -28,7 +30,7 @@
         .body{
         height: auto;
         padding: 1rem;
-        border: 1px solid lightgrey;
+        // border: 1px solid lightgrey;
         overflow: show;
         }
     

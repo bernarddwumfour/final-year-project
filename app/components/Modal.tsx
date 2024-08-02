@@ -15,7 +15,7 @@ const Modal = () => {
 
   return (
     <div id='modal' className={`${modalopen? 'open': 'close'}`}>
-        <div className="backdrop" onClick={togglemodal}>
+        <div className="backdrop">
         </div>
         <div className="modal">
           {modalcontent == "form" && <Formmodal/>}

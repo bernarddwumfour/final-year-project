@@ -2,7 +2,7 @@
     color: #fff;
     background: $primary;
     text-decoration: none;
-    padding: .75rem 1.25rem;
+    padding: .65rem 1.25rem;
     display: inline-block;
     border-radius: $border_radius;
     font-weight: 500;
@@ -10,7 +10,7 @@
     outline: none;
 
     &:hover{
-        box-shadow: 0 0 .5rem lighten($primary,25);
+        box-shadow: 0 0 .5rem darken($primary,25);
     }
 
     &.secondary{

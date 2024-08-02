@@ -20,8 +20,10 @@ const Header = () => {
         </menu>
 
         <menu>
-          <Link href="/login" className="click secondary">
+          <Link href="/login" className="click">
+            <span style={{padding : ".4rem",color: "#fff"}}>
             Login
+            </span>
           </Link>
         </menu>
 

@@ -5,7 +5,7 @@
 
     .label{
         text-align: center;
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         font-weight: 600;
         padding-bottom: 1.5rem;
         color: $primary;
@@ -26,10 +26,12 @@
 
             input,textarea{
                 width: 100%;
-                border: 1px solid lightgrey;
+                border: 1px solid rgb(92, 92, 92);
+                background: darken(rgb(10, 16, 41),2);
                 outline: none;
                 padding: .65rem;
                 border-radius: $border_radius;
+                // background: transparent;
 
                 &:focus{
                     border-color: $primary;
@@ -46,8 +48,8 @@
             }
 
             small{
-                color: rgb(255, 55, 0);
-                font-size: .85rem;
+                color: rgb(224, 104, 71);
+                font-size: .75rem;
             }
 
             label{
@@ -57,7 +59,7 @@
         }
 
         .redirect{
-            padding: .75rem 0;
+            padding: 1.5rem 0;
             color: $text;
 
             a{

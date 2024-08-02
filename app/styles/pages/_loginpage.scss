@@ -1,11 +1,13 @@
 #loginpage{
     padding: 6rem 0;
+    background: rgb(10, 16, 41);
+
 
     .form{
         @extend .center;
         max-width: 550px;
-        background: #fff;
+        // background: lighten(rgb(10, 16, 41),1);
         border-radius: $border_radius;
-        box-shadow: $box_shadow;
+        // box-shadow: $box_shadow;
     }
 }

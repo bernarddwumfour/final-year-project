@@ -5,13 +5,18 @@ import React, { useContext } from 'react'
 
 const Formmodal = () => {
 
-  const {togglemodalcontent} = useContext(Appcontext)
+  const {togglemodalcontent , togglemodal} = useContext(Appcontext)
   const handlesubmit = () =>{
     togglemodalcontent("loading")
 
     setTimeout(()=>{
       togglemodalcontent("policy")
     },3000)
+  }
+
+  const cancelsubmit= (e : React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
+    e.preventDefault()
+    togglemodal()
   }
 
   return (
@@ -41,7 +46,10 @@ const Formmodal = () => {
               <label htmlFor="policy"> Upload File </label>
             </div>
 
-            <button className="click" onClick={handlesubmit}>Summarize Policy</button>
+            <div style={{display : "flex" , justifyContent: "center" , gap : "1rem" ,paddingTop : "1rem"}}>
+            <button className="click" onClick={handlesubmit}style={{left : "auto" , transform : "translateX(0)"}}>Summarize Policy</button>
+            <button className="click secondary" onClick={cancelsubmit} style={{left : "auto" , transform : "translateX(0)"}}>Cancel</button>
+            </div>
           </form>
         </div>
   )

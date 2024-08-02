@@ -12,6 +12,7 @@
   //   // background: $primary;
   //   opacity: .0.8;
   // }
+  background: rgb(10, 16, 41);
 
   #hero {
     // background: lightgrey;
@@ -21,38 +22,52 @@
     align-items: center;
     justify-content: space-between;
     max-width: 1500px;
+    // background: rgba(225,225,225);
+    // backdrop-filter: blur(0.8);
     @extend.center;
 
     .intro {
-      padding: 4rem 0;
-      max-width: 800px;
-      width: 50%;
+      padding: 4rem 2rem;
+      text-align: center;
+      // max-width: 800px;
+      width: 100%;
 
       h1 {
-        font-size: 2.45rem;
+        font-size: 3.9rem;
         color: $primary;
+        color: #fff;
+        font-weight: 800;
+        max-width: 900px;
+        @extend .center;
       }
 
       p {
         font-size: 1.1rem;
-        padding: 1.5rem 0;
+        padding: 1.5rem 1.3rem;
         line-height: 140%;
         color: $text;
+        max-width: 1100px;
+        @extend .center;
       }
 
       .socialstext{
-        padding: 2.5rem 0 1rem;
-        font-size: .9rem;
+        padding: 1.25rem 0 1rem;
+        font-size: .85rem;
         color: lighten($primary,5);
         font-weight: 600;
       }
 
       .socials{
-        font-size: 1.81rem;
+        display: inline-block;
+        width: min-content;
+        margin: 1.5rem 0;
+        font-size: 1.61rem;
+        position: relative;
         display: flex;
-        gap: 1.5rem;
-         i{
-          color: lightgrey;
+        gap: .55rem;
+        @extend .center;
+        i{
+           color: #fff !important;
          }
         // justify-content: center;
       }
@@ -71,7 +86,8 @@
   }
 
   #services {
-    background: lighten($primary, 42);
+    background: lighten(rgb(10, 16, 41), 1);
+
 
     .servicegrid {
       padding: 5rem 0;
@@ -145,7 +161,8 @@
   }
 
   #testimonials {
-    background: lighten($primary, 42);
+    background: lighten(rgb(10, 16, 41), 1);
+
 
     .testimonialsflex {
       padding: 5rem 0;
@@ -157,6 +174,7 @@
       .testimonial {
         padding: 2rem;
         background: #fff;
+        background: darken(rgb(10, 16, 41),0);
         border-radius: $border_radius;
         // border-bottom: 5px solid $primary;
         // display: flex;
@@ -206,7 +224,7 @@
 @media (max-width: 950px) {
   #homepage {
     #hero {
-      padding: 0 1rem 3rem;
+      padding: 6rem 1rem 3rem;
       flex-direction: column-reverse;
       gap: 1rem;
 
@@ -220,8 +238,8 @@
         padding: 3rem 0;
 
         h1 {
-          font-size: 1.65rem;
-          color: $primary;
+          font-size: 2.65rem;
+          padding: 0 2rem;
         }
 
         p {
@@ -270,4 +288,37 @@
       flex-direction: column !important;
     }
   }
+}
+
+
+@media (max-width: 550px) {
+
+ #homepage{
+  #hero {
+.intro{
+
+  h1{
+    padding: 0 .5rem ;
+    font-size: 1.95rem;
+  }
+}
+    .image {
+      height: 320px;
+    }
+  }
+
+
+  #services {
+    .servicegrid {
+      .service {
+        .image {
+         transform: translateX(-50%) scale(.8);
+         transform-origin: center;
+         @extend .center;
+        }
+
+      }
+    }
+  }
+ }
 }

@@ -3,6 +3,7 @@ import "./styles/style.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import AppcontextProvider from "./contexts/AppcontextProvider";
+import Pagemessage from "./components/Pagemessage";
 
 // import { Inter } from "next/font/google";
 // const inter = Inter({ subsets: ["latin"] });
@@ -21,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
+        <Pagemessage/>
         <AppcontextProvider>{children}</AppcontextProvider>
         <Footer />
       </body>

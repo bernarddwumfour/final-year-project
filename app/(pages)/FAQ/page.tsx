@@ -47,7 +47,7 @@ const Faq = () => {
         <h1 className="heading">Frequently Asked Questions</h1>
         <br />
 
-        <p>
+        <p style={{color : "#fff"}}>
           Ever clicked &quot;accept&quot; on a privacy policy without truly
           understanding it? You&apos;re not alone. Privacy policies are often
           lengthy and complex, leaving us confused about our data. Our Privacy

@@ -4,6 +4,14 @@ type faq = {
 
 }
 
+type user= {
+    id : string,
+    firstname : string,
+    surname : string,
+    email : string,
+    password : string,
+}
+
 
 type faqs = faq[]
 
@@ -12,6 +20,10 @@ interface appcontext  {
     togglemodal : ()=>void,
     modalcontent : String,
     togglemodalcontent : (state:string)=> void,
+    pagemessage : string,
+    pagemessagestate : Boolean,
+    pagemessagetype :string,
+    showpagemessage : (message:string,type:"info"|"success"|"error")=>void,
 }
 
 type voidfunction = ()=>void

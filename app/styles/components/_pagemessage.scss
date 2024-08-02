@@ -1,0 +1,23 @@
+.pagemessage{
+    @extend .center;
+    padding: .95rem 3rem;
+    width: max-content;
+    position: fixed;
+    top: 7rem ;
+    z-index: 20;
+    background: darken($secondary,3);
+    border-radius: $border_radius;
+
+    &.hidden{
+        display: none !important;
+    }
+
+    &.iinfo{
+        color: rgb(70, 119, 13);
+    }
+
+    &.error{
+        color: rgb(218, 99, 63);
+    }
+    
+}

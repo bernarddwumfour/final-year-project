@@ -10,7 +10,12 @@ export const Appcontext = createContext<appcontext >({
   modalopen: false,
   togglemodal: ()=>{},
   modalcontent : "form",
-  togglemodalcontent : ()=>{}
+  togglemodalcontent : ()=>{},
+  pagemessage : "",
+  pagemessagetype : "",
+  pagemessagestate : false,
+  showpagemessage : ()=>{}
+  
 });
 
   //Context Provider
@@ -34,13 +39,35 @@ const AppcontextProvider = ({children}: Props) => {
   }
 
 
+  //States for pagemessage
+  const [pagemessage,setpagemessage] = useState("")
+  const [pagemessagestate, setpagemessagestate] = useState(false)
+  const [pagemessagetype, setpagemessagetype] = useState("info")
+
+
+
+  const showpagemessage = (message:string,type:string) =>{
+    setpagemessage(message)
+    setpagemessagestate(true)
+    setpagemessagetype(type)
+    setTimeout(()=>{
+      setpagemessagestate(false)
+      setpagemessage("")
+    },4000)
+    alert(`${pagemessage} displaying`)
+  }
+
   return (
     <Appcontext.Provider
       value={{
         modalopen: modalopen,
         togglemodal,
         modalcontent : modalcontent,
-        togglemodalcontent
+        togglemodalcontent,
+        pagemessage : pagemessage,
+        pagemessagestate  : pagemessagestate,
+        pagemessagetype : pagemessagetype,
+        showpagemessage
       }}
     >
       {children}

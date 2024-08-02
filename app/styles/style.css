@@ -4,15 +4,16 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
-  color: rgb(94, 94, 94);
+  color: rgb(196, 196, 196);
 }
 
 main {
   min-height: 100vh;
   padding-top: 6rem;
+  background: rgb(10, 16, 41);
 }
 
-.center, #loginpage .form, #homepage #services .servicegrid .service .image, #homepage #hero, #modal .modal > div.policy, .form form .click, header nav, .page .subheading::before, .page {
+.center, #loginpage .form, #homepage #services .servicegrid .service .image, #homepage #hero .intro .socials, #homepage #hero .intro p, #homepage #hero .intro h1, #homepage #hero, .pagemessage, #modal .modal > div.policy, .form form .click, header nav, .page .subheading::before, .page {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -23,7 +24,7 @@ main {
   padding: 3rem 1rem 4rem;
 }
 .page .heading {
-  font-size: 1.75rem;
+  font-size: 1.95rem;
   color: rgb(92, 79, 209);
   padding-bottom: 1rem;
   text-align: center;
@@ -34,6 +35,7 @@ main {
   text-align: center;
   position: relative;
   padding: 0 1rem;
+  color: #fff;
 }
 .page .subheading::before {
   position: absolute;
@@ -41,7 +43,7 @@ main {
   width: 5rem;
   height: 3px;
   border-radius: 2rem;
-  background: rgb(77, 95, 199);
+  background: rgb(10, 16, 41);
   top: 170%;
 }
 
@@ -61,15 +63,15 @@ main {
   color: #fff;
   background: rgb(92, 79, 209);
   text-decoration: none;
-  padding: 0.75rem 1.25rem;
+  padding: 0.65rem 1.25rem;
   display: inline-block;
-  border-radius: 0.55rem;
+  border-radius: 0.35rem;
   font-weight: 500;
   border: none;
   outline: none;
 }
 .click:hover {
-  box-shadow: 0 0 0.5rem #bab4eb;
+  box-shadow: 0 0 0.5rem #2b217f;
 }
 .click.secondary {
   background: #fff;
@@ -81,12 +83,11 @@ header {
   width: 100%;
   padding-top: 1.3rem;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.541);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  background: rgba(7, 11, 29, 0.5);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
 }
 header nav {
-  background: rgb(92, 79, 209);
   width: 95%;
   display: flex;
   justify-content: space-between;
@@ -94,7 +95,6 @@ header nav {
   gap: 2rem;
   padding: 0.85rem 1rem;
   border-radius: 1.5rem;
-  box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.3294117647);
 }
 header nav .bars {
   display: none;
@@ -113,6 +113,10 @@ header nav menu a {
   text-decoration: none;
   color: #fff;
   font-size: 0.9rem;
+  transition: all 0.4s;
+}
+header nav menu a:hover {
+  color: rgb(92, 79, 209);
 }
 header > menu {
   display: none;
@@ -160,7 +164,7 @@ header > menu {
   }
   header.active > menu {
     position: relative;
-    background: rgba(255, 255, 255, 0.6431372549);
+    background: rgba(10, 16, 4, 0.6);
     left: 50%;
     transform: translateX(-50%);
     margin-top: 0.5rem;
@@ -168,16 +172,17 @@ header > menu {
     width: 95%;
     display: flex;
     flex-direction: column;
-    border-radius: 0.55rem;
+    border-radius: 0.35rem;
   }
   header.active > menu a {
     text-decoration: none;
-    color: rgb(94, 94, 94);
+    color: rgb(196, 196, 196);
     padding: 0.5rem 0;
+    font-size: 0.85rem;
   }
 }
 footer {
-  background: #6f63d6;
+  background: #080d21;
   padding: 4rem 3rem;
 }
 footer div {
@@ -193,7 +198,7 @@ footer div p {
 }
 .form .label {
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 600;
   padding-bottom: 1.5rem;
   color: rgb(92, 79, 209);
@@ -212,10 +217,11 @@ footer div p {
 }
 .form form .control input, .form form .control textarea {
   width: 100%;
-  border: 1px solid lightgrey;
+  border: 1px solid rgb(92, 92, 92);
+  background: #080d21;
   outline: none;
   padding: 0.65rem;
-  border-radius: 0.55rem;
+  border-radius: 0.35rem;
 }
 .form form .control input:focus, .form form .control textarea:focus {
   border-color: rgb(92, 79, 209);
@@ -228,16 +234,16 @@ footer div p {
   height: 5rem;
 }
 .form form .control small {
-  color: rgb(255, 55, 0);
-  font-size: 0.85rem;
+  color: rgb(224, 104, 71);
+  font-size: 0.75rem;
 }
 .form form .control label {
   font-size: 0.9rem;
   color: grey;
 }
 .form form .redirect {
-  padding: 0.75rem 0;
-  color: rgb(94, 94, 94);
+  padding: 1.5rem 0;
+  color: rgb(196, 196, 196);
 }
 .form form .redirect a {
   color: rgb(92, 79, 209);
@@ -257,7 +263,7 @@ footer div p {
   position: absolute;
   width: 100%;
   height: 100vh;
-  background: rgba(255, 255, 255, 0.616);
+  background: rgba(10, 16, 41, 0.9);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   z-index: 9;
@@ -274,9 +280,7 @@ footer div p {
   width: -moz-max-content;
   width: max-content;
   max-height: calc(100vh - 12rem);
-  background: #fff;
-  border-radius: 0.55rem;
-  box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.3294117647);
+  border-radius: 0.35rem;
   overflow-y: scroll;
 }
 #modal .modal::-webkit-scrollbar {
@@ -310,7 +314,7 @@ footer div p {
   padding: 0.65rem;
   align-items: center;
   font-size: 0.9rem;
-  border-radius: 0.55rem;
+  border-radius: 0.35rem;
   gap: 2rem;
 }
 #modal .modal > div.policy .category:first-of-type {
@@ -334,6 +338,29 @@ footer div p {
   gap: 3rem;
 }
 
+.pagemessage {
+  padding: 0.95rem 3rem;
+  width: -moz-max-content;
+  width: max-content;
+  position: fixed;
+  top: 7rem;
+  z-index: 20;
+  background: #070b1d;
+  border-radius: 0.35rem;
+}
+.pagemessage.hidden {
+  display: none !important;
+}
+.pagemessage.iinfo {
+  color: rgb(70, 119, 13);
+}
+.pagemessage.error {
+  color: rgb(218, 99, 63);
+}
+
+#homepage {
+  background: rgb(10, 16, 41);
+}
 #homepage #hero {
   padding: 4rem 1rem 9rem;
   display: flex;
@@ -343,33 +370,42 @@ footer div p {
   max-width: 1500px;
 }
 #homepage #hero .intro {
-  padding: 4rem 0;
-  max-width: 800px;
-  width: 50%;
+  padding: 4rem 2rem;
+  text-align: center;
+  width: 100%;
 }
 #homepage #hero .intro h1 {
-  font-size: 2.45rem;
+  font-size: 3.9rem;
   color: rgb(92, 79, 209);
+  color: #fff;
+  font-weight: 800;
+  max-width: 900px;
 }
 #homepage #hero .intro p {
   font-size: 1.1rem;
-  padding: 1.5rem 0;
+  padding: 1.5rem 1.3rem;
   line-height: 140%;
-  color: rgb(94, 94, 94);
+  color: rgb(196, 196, 196);
+  max-width: 1100px;
 }
 #homepage #hero .intro .socialstext {
-  padding: 2.5rem 0 1rem;
-  font-size: 0.9rem;
+  padding: 1.25rem 0 1rem;
+  font-size: 0.85rem;
   color: #6f63d6;
   font-weight: 600;
 }
 #homepage #hero .intro .socials {
-  font-size: 1.81rem;
+  display: inline-block;
+  width: -moz-min-content;
+  width: min-content;
+  margin: 1.5rem 0;
+  font-size: 1.61rem;
+  position: relative;
   display: flex;
-  gap: 1.5rem;
+  gap: 0.55rem;
 }
 #homepage #hero .intro .socials i {
-  color: lightgrey;
+  color: #fff !important;
 }
 #homepage #hero .image {
   width: 50%;
@@ -381,7 +417,7 @@ footer div p {
      object-fit: cover;
 }
 #homepage #services {
-  background: #f9f9fd;
+  background: #0b122d;
 }
 #homepage #services .servicegrid {
   padding: 5rem 0;
@@ -391,7 +427,7 @@ footer div p {
   justify-content: center;
 }
 #homepage #services .servicegrid .service {
-  border-radius: 0.55rem;
+  border-radius: 0.35rem;
   padding: 1rem;
 }
 #homepage #services .servicegrid .service .image {
@@ -438,7 +474,7 @@ footer div p {
      object-fit: cover;
 }
 #homepage #testimonials {
-  background: #f9f9fd;
+  background: #0b122d;
 }
 #homepage #testimonials .testimonialsflex {
   padding: 5rem 0;
@@ -450,7 +486,8 @@ footer div p {
 #homepage #testimonials .testimonialsflex .testimonial {
   padding: 2rem;
   background: #fff;
-  border-radius: 0.55rem;
+  background: #0a1029;
+  border-radius: 0.35rem;
 }
 #homepage #testimonials .testimonialsflex .testimonial .name {
   color: rgb(92, 79, 209);
@@ -484,7 +521,7 @@ footer div p {
 
 @media (max-width: 950px) {
   #homepage #hero {
-    padding: 0 1rem 3rem;
+    padding: 6rem 1rem 3rem;
     flex-direction: column-reverse;
     gap: 1rem;
   }
@@ -497,8 +534,8 @@ footer div p {
     padding: 3rem 0;
   }
   #homepage #hero .intro h1 {
-    font-size: 1.65rem;
-    color: rgb(92, 79, 209);
+    font-size: 2.65rem;
+    padding: 0 2rem;
   }
   #homepage #hero .intro p {
     font-size: 0.9rem;
@@ -529,21 +566,33 @@ footer div p {
     flex-direction: column !important;
   }
 }
+@media (max-width: 550px) {
+  #homepage #hero .intro h1 {
+    padding: 0 0.5rem;
+    font-size: 1.95rem;
+  }
+  #homepage #hero .image {
+    height: 320px;
+  }
+  #homepage #services .servicegrid .service .image {
+    transform: translateX(-50%) scale(0.8);
+    transform-origin: center;
+  }
+}
 #loginpage {
   padding: 6rem 0;
+  background: rgb(10, 16, 41);
 }
 #loginpage .form {
   max-width: 550px;
-  background: #fff;
-  border-radius: 0.55rem;
-  box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.3294117647);
+  border-radius: 0.35rem;
 }
 
 #contactpage #contact .map {
   height: 650px;
   background: lightgrey;
   width: 100%;
-  margin-bottom: 5rem;
+  margin-top: 5rem;
 }
 #contactpage #contact .map iframe {
   width: 100%;
@@ -590,7 +639,7 @@ footer div p {
   font-size: 1.45rem;
 }
 #aboutpage .about .content {
-  color: rgb(94, 94, 94);
+  color: rgb(196, 196, 196);
   padding-top: 1rem;
 }
 
@@ -603,21 +652,22 @@ footer div p {
   }
 }
 #faqpage .breadcrums {
-  margin: 2rem 0;
+  margin: 3rem 0;
 }
 #faqpage .breadcrums .title {
   box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.3294117647);
   background: #6f63d6;
   color: #fff;
   padding: 1rem;
-  border-radius: 0.55rem;
+  border-radius: 0.35rem;
 }
 #faqpage .breadcrums .body {
   line-height: 150%;
-  color: rgb(94, 94, 94);
-  border: 1px solid lightgrey;
+  color: #fff;
+  box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.3294117647);
+  background: #0b122d;
   margin-top: 0.41rem;
-  border-radius: 0.55rem;
+  border-radius: 0.35rem;
   height: 0;
   padding: 0;
   border: none;
@@ -626,7 +676,6 @@ footer div p {
 #faqpage .breadcrums.active .body {
   height: auto;
   padding: 1rem;
-  border: 1px solid lightgrey;
   overflow: show;
 }
 #faqpage .page > p {

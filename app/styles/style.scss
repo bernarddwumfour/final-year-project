@@ -13,7 +13,9 @@
 
 main{
     min-height: 100vh;
-    padding-top: 6rem
+    padding-top: 6rem;
+    background: rgb(10, 16, 41);
+
 }
 
 @import './reusables';
@@ -23,6 +25,7 @@ main{
 @import './components/footer.scss';
 @import './components/forms.scss';
 @import './components/modal.scss';
+@import './components/pagemessage';
 
 @import './pages/homepage';
 @import './pages/loginpage';
