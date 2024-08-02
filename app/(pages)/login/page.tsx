@@ -16,8 +16,10 @@ const DisplayingErrorMessagesSchema = Yup.object().shape({
 
 const signin = async (data : {email :string , password : string})=>{
 
+  let url  = process.env.API_URL
+  
   try {
-    const res = await fetch('http://localhost:3000/api/login', {
+    const res = await fetch(`${url}/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
