@@ -15,6 +15,14 @@ export const Appcontext = createContext<appcontext>({
   pagemessagetype: "",
   pagemessagestate: false,
   showpagemessage: () => {},
+  summarisedpolicy : {
+    DataCollection: "",
+    DataUsage: "",
+    DataStorage: "",
+    DataSharing: "",
+    RightsandProtection: "",
+  },
+  addsummarisedpolicy : ()=>{}
 });
 
 //Context Provider
@@ -22,8 +30,10 @@ const AppcontextProvider = ({ children }: Props) => {
   //Modal state
   const [modalopen, setmodalopen] = useState(false);
 
+
   //State for content of modal
   const [modalcontent, setmodalcontent] = useState<String>("form");
+
 
   //States for pagemessage
   const [pagemessage, setpagemessage] = useState<string>("");
@@ -31,6 +41,7 @@ const AppcontextProvider = ({ children }: Props) => {
   const [pagemessagetype, setpagemessagetype] = useState<
     "info" | "success" | "error"
   >("info");
+
 
   //Toggling Modal state
   const togglemodal: voidfunction = () => {
@@ -61,6 +72,20 @@ const AppcontextProvider = ({ children }: Props) => {
     // alert(`${pagemessagestate} displaying`);
   };
 
+
+  //state to store sammurised policy after sammurisation
+  const [summarisedpolicy,setsummarisedpolicy] = useState({
+    DataCollection: "",
+    DataUsage: "",
+    DataStorage: "",
+    DataSharing: "",
+    RightsandProtection: "",
+  })
+
+  const addsummarisedpolicy = (policy :summarisedpolicy)=>{
+    setsummarisedpolicy(policy)
+  }
+
   return (
     <Appcontext.Provider
       value={{
@@ -72,6 +97,8 @@ const AppcontextProvider = ({ children }: Props) => {
         pagemessagestate: pagemessagestate,
         pagemessagetype: pagemessagetype,
         showpagemessage,
+        summarisedpolicy,
+        addsummarisedpolicy
       }}
     >
       {children}

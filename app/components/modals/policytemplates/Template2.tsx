@@ -1,87 +1,64 @@
-import React from "react";
-
+"use client";
+import { Appcontext } from "@/app/contexts/AppcontextProvider";
+import React, { useContext } from "react";
 const Template2 = () => {
+  const { summarisedpolicy } = useContext(Appcontext);
+
   return (
     <div className="template2">
-        <div className="circle circle1"></div>
-        <div className="circle circle2"></div>
-        <div className="circle circle3"></div>
-        <div className="circle circle4"></div>
+      <div className="circle circle1"></div>
+      <div className="circle circle2"></div>
+      <div className="circle circle3"></div>
+      <div className="circle circle4"></div>
       <div className="heading">
-
-        <h2>Privacy Policy <br /><span>Overview</span></h2>
+        <h2>
+          Privacy Policy <br />
+          <span>Overview</span>
+        </h2>
       </div>
       <div>
-
         <div className="details">
           <div className="flex">
             <div className="icon"></div>
             <div className="detail">
-                <h2>Data Collection</h2>
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Laboriosam praesentium sunt voluptatem, eum iusto ut, sapiente
-                  nulla, fugit nobis perspiciatis vero atque nesciunt?
-                </p>
-              </div>
+              <h2>Data Collection</h2>
+              <p>{summarisedpolicy && summarisedpolicy.DataCollection}</p>
+            </div>
           </div>
-          
 
           <div className="flex">
             <div className="icon"></div>
             <div className="detail">
-                <h2>Data Collection</h2>
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Laboriosam praesentium sunt voluptatem, eum iusto ut, sapiente
-                  nulla, fugit nobis perspiciatis vero atque nesciunt?
-                </p>
-              </div>
+              <h2>Data Usage</h2>
+              <p>{summarisedpolicy && summarisedpolicy.DataUsage}</p>
+            </div>
           </div>
-
 
           <div className="flex">
             <div className="icon"></div>
             <div className="detail">
-                <h2>Data Collection</h2>
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Laboriosam praesentium sunt voluptatem, eum iusto ut, sapiente
-                  nulla, fugit nobis perspiciatis vero atque nesciunt?
-                </p>
-              </div>
+              <h2>Data Sharing</h2>
+              <p>{summarisedpolicy && summarisedpolicy.DataSharing}</p>
+            </div>
           </div>
-
 
           <div className="flex">
             <div className="icon"></div>
             <div className="detail">
-                <h2>Data Collection</h2>
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Laboriosam praesentium sunt voluptatem, eum iusto ut, sapiente
-                  nulla, fugit nobis perspiciatis vero atque nesciunt?
-                </p>
-              </div>
+              <h2>Data storage</h2>
+              <p>{summarisedpolicy && summarisedpolicy.DataStorage}</p>
+            </div>
           </div>
-
 
           <div className="flex">
             <div className="icon"></div>
             <div className="detail">
-                <h2>Data Collection</h2>
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Laboriosam praesentium sunt voluptatem, eum iusto ut, sapiente
-                  nulla, fugit nobis perspiciatis vero atque nesciunt?
-                </p>
-              </div>
+              <h2>Rights And Protection</h2>
+              <p>{summarisedpolicy && summarisedpolicy.RightsandProtection}</p>
+            </div>
           </div>
 
-          <div style={{height : "200px"}}></div>
-
-
-
+          <div style={{ height: "200px" }}></div>
         </div>
       </div>
     </div>

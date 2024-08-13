@@ -27,14 +27,37 @@ const extractDocxText = async (file: File): Promise<string> => {
   return result.value;
 };
 
+const uploadtomodel = async (policy: { data: string }) => {
+  try {
+    const res = await fetch(
+      "https://finalyearproject-ai-1.onrender.com/predict",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(policy),
+      }
+    );
+
+    return res;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 const Formmodal = () => {
   const [policy, setpolicy] = useState("");
   const [policyerror, setpolicyerror] = useState("");
   const [fileerror, setfileerror] = useState("");
   const [filecontent, setfilecontent] = useState("");
 
-  const { togglemodalcontent, showpagemessage, togglemodal } =
-    useContext(Appcontext);
+  const {
+    togglemodalcontent,
+    showpagemessage,
+    togglemodal,
+    addsummarisedpolicy,
+  } = useContext(Appcontext);
 
   const handlefile = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -62,30 +85,55 @@ const Formmodal = () => {
     console.log(filecontent);
   };
 
-  const handlesubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handlesubmit = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     e.preventDefault();
-    setpolicyerror("")
-    setfileerror("")
+    setpolicyerror("");
+    setfileerror("");
 
     //Check if both options or olny one was used and alert the user acordingly
-    if(policy === "" && filecontent === ""){
-      showpagemessage("Please paste a policy or upload a the file","error");
-      return
-    }
-    else if (policy != "" && filecontent != "") {
+    if (policy === "" && filecontent === "") {
+      showpagemessage("Please paste a policy or upload a the file", "error");
+      return;
+    } else if (policy != "" && filecontent != "") {
       showpagemessage("Please select only one option", "error");
-      return
-    }else if(policy !== "" && policy.length < 300){
+      return;
+    } else if (policy !== "" && policy.length < 300) {
       setpolicyerror("Policy is too short to summarise");
-      return
-
-    }else if(filecontent !== "" && filecontent.length < 300){
+      return;
+    } else if (filecontent !== "" && filecontent.length < 300) {
       setfileerror("File content is too short to summarise");
-      return
+      return;
     }
 
-     // Everything has been checked so policy can now be uploaded to model
-     togglemodalcontent("policy")
+    // Everything has been checked so policy can now be uploaded to model
+    let policydata;
+    if (policy !== "") {
+      policydata = policy.replace(/"/g, '\\"').replace(/\n/g, "\\n");
+    } else {
+      policydata = filecontent.replace(/"/g, '\\"').replace(/\n/g, "\\n");
+    }
+
+    // console.log(policydata);
+
+    let res = await uploadtomodel({ data: policydata });
+    if (!res?.ok) {
+      showpagemessage("Unable to summarise policy", "error");
+      return;
+    }
+
+    let data = await res?.json();
+    // console.log(data);
+    addsummarisedpolicy({
+      DataCollection: data["Data Collection"].replace(/\\n/g, '\n'),
+      DataUsage: data["Data Usage"].replace(/\\n/g, '\n'),
+      DataStorage: data["Data Storage"].replace(/\\n/g, '\n'),
+      DataSharing: data["Data Sharing"].replace(/\\n/g, '\n'),
+      RightsandProtection: data["Rights and Protection"].replace(/\\n/g, '\n'),
+    });
+
+    togglemodalcontent("policy");
   };
 
   const cancelsubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {

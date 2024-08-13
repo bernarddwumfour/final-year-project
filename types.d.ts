@@ -15,6 +15,14 @@ type user= {
 
 type faqs = faq[]
 
+type summarisedpolicy = {
+    DataCollection:string,
+    DataUsage: string,
+    DataStorage:string,
+    DataSharing: string,
+    RightsandProtection: string,
+  }
+
 interface appcontext  {
     modalopen : Boolean,
     togglemodal : ()=>void,
@@ -23,7 +31,9 @@ interface appcontext  {
     pagemessage : string,
     pagemessagestate : Boolean,
     pagemessagetype :string,
-    showpagemessage : (message:string,type:"info"|"success"|"error")=>void
+    showpagemessage : (message:string,type:"info"|"success"|"error")=>void,
+    summarisedpolicy : summarisedpolicy,
+    addsummarisedpolicy :(policy : summarisedpolicy)=> void,
 }
 
 type voidfunction = ()=>void

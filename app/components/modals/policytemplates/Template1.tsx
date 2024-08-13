@@ -1,6 +1,12 @@
-import React from "react";
+'use client'
+import { Appcontext } from "@/app/contexts/AppcontextProvider";
+import React, { useContext } from "react";
 
 const Template1 = () => {
+
+
+  const { summarisedpolicy} = useContext(Appcontext);
+
   return (
     <div className="template1">
       <div className="heading">
@@ -18,9 +24,7 @@ const Template1 = () => {
               <div className="detail">
                 <h2>Data Collection</h2>
                 <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Laboriosam praesentium sunt voluptatem, eum iusto ut, sapiente
-                  nulla, fugit nobis perspiciatis vero atque nesciunt?
+                  {summarisedpolicy && summarisedpolicy.DataCollection}
                 </p>
               </div>
             </div>
@@ -33,11 +37,9 @@ const Template1 = () => {
             <div className="flex">
               <span>1</span>
               <div className="detail">
-                <h2>Data Collection</h2>
+                <h2>Data Usage</h2>
                 <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Laboriosam praesentium sunt voluptatem, eum iusto ut, sapiente
-                  nulla, fugit nobis perspiciatis vero atque nesciunt?
+                {summarisedpolicy && summarisedpolicy.DataUsage}
                 </p>
               </div>
             </div>
@@ -49,11 +51,9 @@ const Template1 = () => {
             <div className="flex">
               <span>1</span>
               <div className="detail">
-                <h2>Data Collection</h2>
+                <h2>Data Sharing</h2>
                 <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Laboriosam praesentium sunt voluptatem, eum iusto ut, sapiente
-                  nulla, fugit nobis perspiciatis vero atque nesciunt?
+                  {summarisedpolicy && summarisedpolicy.DataSharing}
                 </p>
               </div>
             </div>
@@ -65,11 +65,9 @@ const Template1 = () => {
             <div className="flex">
               <span>1</span>
               <div className="detail">
-                <h2>Data Collection</h2>
+                <h2>Data storage</h2>
                 <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Laboriosam praesentium sunt voluptatem, eum iusto ut, sapiente
-                  nulla, fugit nobis perspiciatis vero atque nesciunt?
+                  {summarisedpolicy && summarisedpolicy.DataStorage}
                 </p>
               </div>
             </div>
@@ -81,11 +79,9 @@ const Template1 = () => {
             <div className="flex">
               <span>1</span>
               <div className="detail">
-                <h2>Data Collection</h2>
+                <h2>Rights And Protection</h2>
                 <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Laboriosam praesentium sunt voluptatem, eum iusto ut, sapiente
-                  nulla, fugit nobis perspiciatis vero atque nesciunt?
+                  {summarisedpolicy && summarisedpolicy.RightsandProtection}
                 </p>
               </div>
             </div>
