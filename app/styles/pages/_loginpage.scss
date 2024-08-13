@@ -1,13 +1,13 @@
-#loginpage{
-    padding: 6rem 0;
-    background: rgb(10, 16, 41);
+#loginpage {
+  padding: 6rem 0;
+  background: rgb(10, 16, 41);
 
-
-    .form{
-        @extend .center;
-        max-width: 550px;
-        // background: lighten(rgb(10, 16, 41),1);
-        border-radius: $border_radius;
-        // box-shadow: $box_shadow;
-    }
+  .form {
+    @extend .center;
+    max-width: 550px;
+    border-radius: $border_radius;
+    // box-shadow: $box_shadow;
+    // background: darken(rgba(10, 16, 41, 0.5), 3);
+    backdrop-filter: blur(15px);
+  }
 }

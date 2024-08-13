@@ -14,36 +14,37 @@ const DisplayingErrorMessagesSchema = Yup.object().shape({
   password: Yup.string().required("Password is required"),
 });
 
-const signin = async (data : {email :string , password : string})=>{
-
-  const url :string  = process.env.API_URL as string
+const signin = async (data: { email: string; password: string }) => {
+  const url: string = process.env.API_URL as string;
   // alert(url)
 
   try {
     const res = await fetch(`/api/login`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
 
     return res;
   } catch (error) {
-    console.error('Error during sign in:', error);
-    return { ok: false, status: 500, json: async () => ({ message: 'Internal Server Error' }) };
+    console.error("Error during sign in:", error);
+    return {
+      ok: false,
+      status: 500,
+      json: async () => ({ message: "Internal Server Error" }),
+    };
   }
-
-  
-}
+};
 
 const Login = () => {
-  const {showpagemessage} = useContext(Appcontext)
+  const { showpagemessage } = useContext(Appcontext);
   const router = useRouter();
   return (
     <main id="loginpage">
       <div className="page">
-        <div style={{margin : '2vh 0'}}></div>
+        <div style={{ margin: "2vh 0" }}></div>
         <div className="form">
           <p className="label">Login To my account</p>
 
@@ -53,47 +54,42 @@ const Login = () => {
               password: "",
             }}
             validationSchema={DisplayingErrorMessagesSchema}
-            onSubmit={async (values , { setSubmitting }) => {
+            onSubmit={async (values, { setSubmitting }) => {
               try {
                 let res = await signin(values);
                 if (res.ok) {
                   let data = await res.json();
-                  showpagemessage(`Login Successful`,'success')
+                  showpagemessage(`Login Successful`, "success");
                   // alert("Login succesful")
                   router.push("/");
                 } else {
                   // Display error message
                   let errorData = await res.json();
-                  showpagemessage(` ${errorData.message}`, 'error');
-                  console.error('Sign in error:', errorData);
+                  showpagemessage(` ${errorData.message}`, "error");
+                  console.error("Sign in error:", errorData);
                 }
               } catch (error) {
-                console.error('Sign in error:', error);
-                showpagemessage('An unexpected error occurred.', "error");
+                console.error("Sign in error:", error);
+                showpagemessage("An unexpected error occurred.", "error");
               } finally {
                 setSubmitting(false);
               }
-            }} 
-
+            }}
           >
             {({ errors, touched }) => (
               <Form>
                 <div className="control">
-                  {touched.email && errors.email && (
-                    <small>
-                      {errors.email}
+                  <small>
+                  {touched.email && errors.email && errors.email}
                     </small>
-                  )}
                   <Field name="email" />
                   <label htmlFor="email"> Email</label>
                 </div>
 
                 <div className="control">
-                  {touched.password && errors.password && (
-                    <small>
-                      {errors.password}
-                    </small>
-                  )}
+                  <small>
+                    {touched.password && errors.password && errors.password}
+                  </small>
                   <Field name="password" />
                   <label htmlFor="password"> Password</label>
                 </div>

@@ -15,7 +15,9 @@ export default function Home() {
 
       <Modal />
 
+
       <div id="hero">
+      <div className="deco"></div>
         <div className="intro">
           <div>
             <h1>Simplifying Privacy, One Policy at a Time</h1>

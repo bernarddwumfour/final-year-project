@@ -26,29 +26,31 @@ const createuser = async (data: {
   email: string;
   password: string;
 }) => {
-
-  let url : string = process.env.API_URL as string
+  let url: string = process.env.API_URL as string;
 
   try {
     const res = await fetch(`/api/signup`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
 
     return res;
   } catch (error) {
-    console.error('Error during sign up:', error);
-    return { ok: false, status: 500, json: async () => ({ message: 'Internal Server Error' }) };
+    console.error("Error during sign up:", error);
+    return {
+      ok: false,
+      status: 500,
+      json: async () => ({ message: "Internal Server Error" }),
+    };
   }
-
- };
+};
 
 const Signup = () => {
   const router = useRouter();
-  const {showpagemessage} = useContext(Appcontext)
+  const { showpagemessage } = useContext(Appcontext);
   return (
     <main id="loginpage">
       <div className="page">
@@ -63,22 +65,22 @@ const Signup = () => {
               confirmpassword: "",
             }}
             validationSchema={DisplayingErrorMessagesSchema}
-            onSubmit={async (values , { setSubmitting }) => {
+            onSubmit={async (values, { setSubmitting }) => {
               try {
                 let res = await createuser(values);
                 if (res.ok) {
                   let data = await res.json();
                   console.log(data);
-                  showpagemessage('Account Created Successfully', "success");
+                  showpagemessage("Account Created Successfully", "success");
                   router.push("/login");
                 } else {
                   // Display error message
                   let errorData = await res.json();
-                  showpagemessage(`${errorData.message}`,"error");
+                  showpagemessage(`${errorData.message}`, "error");
                 }
               } catch (error) {
-                console.error('Sign up error:', error);
-                alert('An unexpected error occurred.');
+                console.error("Sign up error:", error);
+                alert("An unexpected error occurred.");
               } finally {
                 setSubmitting(false);
               }
@@ -87,51 +89,41 @@ const Signup = () => {
             {({ errors, touched }) => (
               <Form>
                 <div className="control">
-                  {touched.firstname && errors.firstname && (
-                    <small>
-                      {errors.firstname}
-                    </small>
-                  )}
+                  <small>
+                    {touched.firstname && errors.firstname && errors.firstname}
+                  </small>
                   <Field name="firstname" />
                   <label htmlFor="firstname"> Firstname</label>
                 </div>
 
                 <div className="control">
-                  {touched.surname && errors.surname && (
-                    <small>
-                      {errors.surname}
-                    </small>
-                  )}
+                  <small>
+                    {touched.surname && errors.surname && errors.surname}
+                  </small>
                   <Field name="surname" />
                   <label htmlFor="surname"> Surname</label>
                 </div>
 
                 <div className="control">
-                  {touched.email && errors.email && (
-                    <small>
-                      {errors.email}
-                    </small>
-                  )}
+                  <small>{touched.email && errors.email && errors.email}</small>
                   <Field name="email" />
                   <label htmlFor="email"> Email</label>
                 </div>
 
                 <div className="control">
-                  {touched.password && errors.password && (
-                    <small>
-                      {errors.password}
-                    </small>
-                  )}
+                  <small>
+                    {touched.password && errors.password && errors.password}
+                  </small>
                   <Field name="password" />
                   <label htmlFor="password"> Password</label>
                 </div>
 
                 <div className="control">
-                  {touched.confirmpassword && errors.confirmpassword && (
-                    <small>
-                      {errors.confirmpassword}
-                    </small>
-                  )}
+                  <small>
+                    {touched.confirmpassword &&
+                      errors.confirmpassword &&
+                      errors.confirmpassword}
+                  </small>
                   <Field name="confirmpassword" />
                   <label htmlFor="confirmpassword"> Confirm Password</label>
                 </div>

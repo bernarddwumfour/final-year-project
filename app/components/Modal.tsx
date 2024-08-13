@@ -4,6 +4,7 @@ import { Appcontext } from '../contexts/AppcontextProvider';
 import Formmodal from './modals/Formmodal';
 import Loadingmodal from './modals/Loadingmodal';
 import Policymodal from './modals/Policymodal';
+import Template1 from './modals/policytemplates/Template1';
 
 
 

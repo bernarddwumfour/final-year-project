@@ -8,7 +8,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Lato", sans-serif;
-    color: $text;
+    // color: $text;
 }
 
 main{
@@ -25,6 +25,7 @@ main{
 @import './components/footer.scss';
 @import './components/forms.scss';
 @import './components/modal.scss';
+@import './components/templates';
 @import './components/pagemessage';
 
 @import './pages/homepage';

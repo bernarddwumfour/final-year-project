@@ -32,6 +32,7 @@
                 padding: .65rem;
                 border-radius: $border_radius;
                 // background: transparent;
+                color: $text;
 
                 &:focus{
                     border-color: $primary;
@@ -50,6 +51,9 @@
             small{
                 color: rgb(224, 104, 71);
                 font-size: .75rem;
+                height: .5rem;
+                text-align: right;
+                font-style: italic;
             }
 
             label{
