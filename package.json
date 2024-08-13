@@ -16,7 +16,6 @@
     "mongoose": "^8.5.0",
     "next": "14.2.3",
     "next-auth": "^4.24.7",
-    "pdfjs-dist": "^4.5.136",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
@@ -25,6 +24,7 @@
   "devDependencies": {
     "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20",
+    "@types/pdf-parse": "^1.1.4",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",

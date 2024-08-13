@@ -1,31 +1,17 @@
 "use client";
 import { Appcontext } from "@/app/contexts/AppcontextProvider";
 import React, { useContext, useState } from "react";
-import * as pdfjsLib from "pdfjs-dist";
 import mammoth from "mammoth";
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.js`;
-
-const extractPdfText = async (file: File): Promise<string> => {
-  const arrayBuffer = await file.arrayBuffer();
-  const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-  let text = "";
-
-  for (let i = 0; i < pdf.numPages; i++) {
-    const page = await pdf.getPage(i + 1);
-    const content = await page.getTextContent();
-    const strings = content.items.map((item: any) => item.str);
-    text += strings.join(" ") + " ";
-  }
-
-  return text;
-};
 
 const extractDocxText = async (file: File): Promise<string> => {
   const arrayBuffer = await file.arrayBuffer();
   const result = await mammoth.extractRawText({ arrayBuffer });
   return result.value;
 };
+
+
+
 
 const uploadtomodel = async (policy: { data: string }) => {
   try {
@@ -66,8 +52,9 @@ const Formmodal = () => {
       const fileType = file.type;
 
       if (fileType === "application/pdf") {
-        const text = await extractPdfText(file);
-        setfilecontent(text);
+        // const text = await extractTextFromPDF(file);
+        // setfilecontent(text);
+        console.log("Content" + filecontent)
       } else if (
         fileType ===
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
