@@ -29,6 +29,11 @@ const uploadtomodel = async (policy: { data: string }) => {
     return res;
   } catch (err) {
     console.log(err);
+    return {
+      ok: false,
+      status: 500,
+      json: async () => ({ message: "Internal Server Error" }),
+    };
   }
 };
 
@@ -37,6 +42,7 @@ const Formmodal = () => {
   const [policyerror, setpolicyerror] = useState("");
   const [fileerror, setfileerror] = useState("");
   const [filecontent, setfilecontent] = useState("");
+  const [loading,setloading] = useState<boolean>(false)
 
   const {
     togglemodalcontent,
@@ -104,9 +110,14 @@ const Formmodal = () => {
 
     // console.log(policydata);
 
+    //Set loading state to deactive form button
+    setloading(true)
+    
+
     let res = await uploadtomodel({ data: policydata });
     if (!res?.ok) {
       showpagemessage("Unable to summarise policy", "error");
+      setloading(false)
       return;
     }
 
@@ -121,6 +132,7 @@ const Formmodal = () => {
     });
 
     togglemodalcontent("policy");
+    setloading(false)
   };
 
   const cancelsubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -169,11 +181,12 @@ const Formmodal = () => {
           }}
         >
           <button
-            className="click"
+            className={`click ${loading && "inactive"}`}
             onClick={handlesubmit}
             style={{ left: "auto", transform: "translateX(0)" }}
+            disabled = {loading}
           >
-            Summarize Policy
+            {loading ? "Uploading Policy ... " :"Summarize Policy"}
           </button>
           <button
             className="click secondary"

@@ -1,11 +1,13 @@
 "use client";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { Appcontext } from "@/app/contexts/AppcontextProvider";
+
+// OTHER FUNCTIONS
 
 const DisplayingErrorMessagesSchema = Yup.object().shape({
   email: Yup.string()
@@ -41,6 +43,8 @@ const signin = async (data: { email: string; password: string }) => {
 const Login = () => {
   const { showpagemessage } = useContext(Appcontext);
   const router = useRouter();
+  const [loading,setloading] = useState<boolean>(false)
+
   return (
     <main id="loginpage">
       <div className="page">
@@ -55,22 +59,26 @@ const Login = () => {
             }}
             validationSchema={DisplayingErrorMessagesSchema}
             onSubmit={async (values, { setSubmitting }) => {
+              setloading(true)
               try {
                 let res = await signin(values);
                 if (res.ok) {
                   let data = await res.json();
-                  showpagemessage(`Login Successful`, "success");
-                  // alert("Login succesful")
                   router.push("/");
+                  showpagemessage(`Login Successful`, "success");
+                  setloading(false)
+                  // alert("Login succesful")
                 } else {
                   // Display error message
                   let errorData = await res.json();
                   showpagemessage(` ${errorData.message}`, "error");
+                  setloading(false)
                   console.error("Sign in error:", errorData);
                 }
               } catch (error) {
                 console.error("Sign in error:", error);
                 showpagemessage("An unexpected error occurred.", "error");
+                setloading(false)
               } finally {
                 setSubmitting(false);
               }
@@ -79,9 +87,7 @@ const Login = () => {
             {({ errors, touched }) => (
               <Form>
                 <div className="control">
-                  <small>
-                  {touched.email && errors.email && errors.email}
-                    </small>
+                  <small>{touched.email && errors.email && errors.email}</small>
                   <Field name="email" />
                   <label htmlFor="email"> Email</label>
                 </div>
@@ -90,12 +96,12 @@ const Login = () => {
                   <small>
                     {touched.password && errors.password && errors.password}
                   </small>
-                  <Field name="password" />
+                  <Field name="password" type="password"/>
                   <label htmlFor="password"> Password</label>
                 </div>
 
-                <button className="click" type="submit">
-                  Login
+                <button className={`click ${loading && "inactive"}`} type="submit" disabled = {loading} >
+                  {loading ? "Signing in " :"Login"}
                 </button>
 
                 <p className="redirect">

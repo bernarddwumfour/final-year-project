@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { useRouter } from "next/navigation";
@@ -17,7 +17,7 @@ const DisplayingErrorMessagesSchema = Yup.object().shape({
     .email("Please enter a valid email")
     .required("Email is required"),
   password: Yup.string().required("password is required"),
-  confirmpassword: Yup.string().required("Password Confirmation is required"),
+  confirmpassword: Yup.string().required("Password Confirmation is required").oneOf([Yup.ref('password'), ''], 'Passwords must match'),
 });
 
 const createuser = async (data: {
@@ -51,6 +51,7 @@ const createuser = async (data: {
 const Signup = () => {
   const router = useRouter();
   const { showpagemessage } = useContext(Appcontext);
+  const [loading,setloading] = useState<boolean>(false)
   return (
     <main id="loginpage">
       <div className="page">
@@ -67,20 +68,24 @@ const Signup = () => {
             validationSchema={DisplayingErrorMessagesSchema}
             onSubmit={async (values, { setSubmitting }) => {
               try {
+                setloading(true)
                 let res = await createuser(values);
                 if (res.ok) {
                   let data = await res.json();
                   console.log(data);
-                  showpagemessage("Account Created Successfully", "success");
                   router.push("/login");
+                  showpagemessage("Account Created Successfully", "success");
+                  setloading(false)
                 } else {
                   // Display error message
                   let errorData = await res.json();
                   showpagemessage(`${errorData.message}`, "error");
+                  setloading(false)
                 }
               } catch (error) {
                 console.error("Sign up error:", error);
-                alert("An unexpected error occurred.");
+                showpagemessage("An unexpected error occurred.", "error");
+                setloading(false)
               } finally {
                 setSubmitting(false);
               }
@@ -114,7 +119,7 @@ const Signup = () => {
                   <small>
                     {touched.password && errors.password && errors.password}
                   </small>
-                  <Field name="password" />
+                  <Field name="password" type="password"/>
                   <label htmlFor="password"> Password</label>
                 </div>
 
@@ -124,12 +129,12 @@ const Signup = () => {
                       errors.confirmpassword &&
                       errors.confirmpassword}
                   </small>
-                  <Field name="confirmpassword" />
+                  <Field name="confirmpassword" type="password"/>
                   <label htmlFor="confirmpassword"> Confirm Password</label>
                 </div>
 
-                <button className="click" type="submit">
-                  Signup
+                <button className={`click ${loading && "inactive"}`} type="submit">
+                  {loading ? "Creating Account" :"Signup"}
                 </button>
 
                 <p className="redirect">

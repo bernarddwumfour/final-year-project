@@ -17,4 +17,8 @@
         background: #fff;
         color: $primary;
     }
+
+    &.inactive{
+        opacity: .5;
+    }
 }

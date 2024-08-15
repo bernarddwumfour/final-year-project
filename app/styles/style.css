@@ -76,6 +76,9 @@ main {
   background: #fff;
   color: rgb(92, 79, 209);
 }
+.click.inactive {
+  opacity: 0.5;
+}
 
 header {
   position: fixed;
