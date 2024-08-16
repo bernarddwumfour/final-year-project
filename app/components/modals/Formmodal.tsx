@@ -10,6 +10,10 @@ const extractDocxText = async (file: File): Promise<string> => {
   return result.value;
 };
 
+const extractTxtText = async (file: File): Promise<string> => {
+  return await file.text();
+};
+
 
 
 
@@ -56,25 +60,24 @@ const Formmodal = () => {
     if (file) {
       setfileerror("");
       const fileType = file.type;
-
+  
       if (fileType === "application/pdf") {
         // const text = await extractTextFromPDF(file);
         // setfilecontent(text);
-        console.log("Content" + filecontent)
-      } else if (
-        fileType ===
-        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-      ) {
+      } else if (fileType === "application/vnd.openxmlformats-officedocument.wordprocessingml.document") {
         const text = await extractDocxText(file);
         setfilecontent(text);
+      } else if (fileType === "text/plain") {
+        const text = await extractTxtText(file);
+        setfilecontent(text);
+        console.log(text)
       } else {
-        setfileerror("Invalid file type. Please upload a PDF or DOCX file.");
+        setfileerror("Invalid file type. Please upload a PDF, DOCX, or TXT file.");
       }
     } else {
       setfilecontent("");
       setfileerror("No file selected");
     }
-
     console.log(filecontent);
   };
 
@@ -164,7 +167,7 @@ const Formmodal = () => {
           <small className="error">{fileerror}</small>
           <input
             type="file"
-            accept=".pdf,.docx"
+            accept=".pdf,.docx,.txt"
             onChange={handlefile}
             name="policy"
             id="policy"
