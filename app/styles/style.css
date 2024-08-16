@@ -323,7 +323,7 @@ footer div p {
 }
 .template1 .heading {
   display: flex;
-  padding: 2rem;
+  padding: 1.5rem;
   gap: 2rem;
   justify-content: center;
   background: rgb(68, 149, 160);
@@ -333,14 +333,14 @@ footer div p {
   text-align: center;
 }
 .template1 .heading .icon {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   background: lightgrey;
   border-radius: 50%;
   flex: none;
 }
 .template1 .details {
-  padding: 2rem;
+  padding: 1rem;
 }
 .template1 .details > .flex {
   display: flex;
@@ -352,8 +352,8 @@ footer div p {
   flex-direction: row-reverse;
 }
 .template1 .details > .flex .icon {
-  width: 200px;
-  height: 200px;
+  width: 170px;
+  height: 170px;
   flex: none;
   background: lightgrey;
 }
@@ -384,10 +384,9 @@ footer div p {
 
 .template2 {
   position: relative;
-  overflow: hidden;
   background: #080d21;
   z-index: 11;
-  padding-top: 4rem;
+  padding-top: 2.5rem;
 }
 .template2 .circle {
   position: absolute;
@@ -398,23 +397,23 @@ footer div p {
   position: absolute;
 }
 .template2 .circle.circle1 {
-  top: -100px;
-  left: -100px;
+  top: -150px;
+  left: -150px;
 }
 .template2 .circle.circle2 {
-  top: -100px;
-  right: -100px;
+  top: -150px;
+  right: -150px;
 }
 .template2 .circle.circle3 {
-  bottom: -100px;
-  left: -100px;
+  bottom: -200px;
+  left: -200px;
 }
 .template2 .circle.circle4 {
-  bottom: -100px;
-  right: -100px;
+  bottom: -200px;
+  right: -200px;
 }
 .template2 .heading {
-  padding: 2rem;
+  padding: 1rem;
   color: #fff;
   font-size: 1.25rem;
   text-align: center;
@@ -425,21 +424,21 @@ footer div p {
   font-size: 2.5rem;
 }
 .template2 .details {
-  padding: 2rem;
+  padding: 1rem;
 }
 .template2 .details > .flex {
   display: flex;
   gap: 2rem;
   justify-content: center;
-  margin: 3rem 0;
+  margin: 2rem 0;
   align-items: center;
 }
 .template2 .details > .flex:nth-child(even) {
   flex-direction: row-reverse;
 }
 .template2 .details > .flex .icon {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   flex: none;
   background: lightgrey;
   border-radius: 50%;
@@ -455,7 +454,7 @@ footer div p {
 .template2 .details > .flex .detail p {
   color: #fff;
   font-size: 0.8rem;
-  max-width: 400px;
+  max-width: 500px;
 }
 
 .pagemessage {

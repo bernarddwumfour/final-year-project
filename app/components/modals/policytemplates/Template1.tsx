@@ -35,7 +35,7 @@ const Template1 = () => {
           <div className="flex">
             <div className="icon"></div>
             <div className="flex">
-              <span>1</span>
+              <span>2</span>
               <div className="detail">
                 <h2>Data Usage</h2>
                 <p>
@@ -49,7 +49,7 @@ const Template1 = () => {
           <div className="flex">
             <div className="icon"></div>
             <div className="flex">
-              <span>1</span>
+              <span>3</span>
               <div className="detail">
                 <h2>Data Sharing</h2>
                 <p>
@@ -63,7 +63,7 @@ const Template1 = () => {
           <div className="flex">
             <div className="icon"></div>
             <div className="flex">
-              <span>1</span>
+              <span>4</span>
               <div className="detail">
                 <h2>Data storage</h2>
                 <p>
@@ -77,7 +77,7 @@ const Template1 = () => {
           <div className="flex">
             <div className="icon"></div>
             <div className="flex">
-              <span>1</span>
+              <span>5</span>
               <div className="detail">
                 <h2>Rights And Protection</h2>
                 <p>

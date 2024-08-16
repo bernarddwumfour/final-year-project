@@ -3,12 +3,11 @@
   @extend .center;
   background: #fff;
   z-index: 11;
-  // top: 6rem;
-  // padding: 2rem;
+
 
   .heading {
     display: flex;
-    padding: 2rem;
+    padding: 1.5rem;
     gap: 2rem;
     justify-content: center;
     background: rgb(68, 149, 160);
@@ -18,8 +17,8 @@
     text-align: center;
 
     .icon {
-      width: 150px;
-      height: 150px;
+      width: 120px;
+      height: 120px;
       background: lightgrey;
       border-radius: 50%;
       flex: none;
@@ -27,7 +26,7 @@
   }
 
   .details {
-    padding: 2rem;
+    padding:  1rem;
     & > .flex {
       display: flex;
       gap: 2rem;
@@ -39,8 +38,8 @@
       }
 
       .icon {
-        width: 200px;
-        height: 200px;
+        width: 170px;
+        height: 170px;
         flex: none;
         background: lightgrey;
       }
@@ -78,12 +77,12 @@
 
 .template2 {
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
   @extend .center;
   background: darken($secondary, 2);
   z-index: 11;
   // top: 6rem;
-  padding-top: 4rem;
+  padding-top: 2.5rem;
 
 
   .circle {
@@ -96,31 +95,31 @@
     
 
     &.circle1{
-        top: -100px;
-        left: -100px;
+        top: -150px;
+        left: -150px;
     }
     
 
     &.circle2{
-        top: -100px;
-        right: -100px;
+        top: -150px;
+        right: -150px;
     }
     
 
     &.circle3{
-        bottom: -100px;
-        left: -100px;
+        bottom: -200px;
+        left: -200px;
     }
     
 
     &.circle4{
-        bottom: -100px;
-        right: -100px;
+        bottom: -200px;
+        right: -200px;
     }
   }
 
   .heading {
-    padding: 2rem;
+    padding: 1rem;
     color: #fff;
     font-size: 1.25rem;
     text-align: center;
@@ -133,12 +132,12 @@
   }
 
   .details {
-    padding: 2rem;
+    padding: 1rem;
     & > .flex {
       display: flex;
       gap: 2rem;
       justify-content: center;
-      margin: 3rem 0;
+      margin: 2rem 0;
       align-items: center;
 
       &:nth-child(even) {
@@ -146,8 +145,8 @@
       }
 
       .icon {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
         flex: none;
         background: lightgrey;
         border-radius: 50%;
@@ -164,7 +163,7 @@
         p {
           color: #fff;
           font-size: 0.8rem;
-          max-width: 400px;
+          max-width: 500px;
         }
       }
     }

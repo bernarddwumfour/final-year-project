@@ -5,7 +5,8 @@ const Template2 = () => {
   const { summarisedpolicy } = useContext(Appcontext);
 
   return (
-    <div className="template2">
+    <div style={{overflow : "hidden"}}>
+      <div className="template2" >
       <div className="circle circle1"></div>
       <div className="circle circle2"></div>
       <div className="circle circle3"></div>
@@ -58,9 +59,10 @@ const Template2 = () => {
             </div>
           </div>
 
-          <div style={{ height: "200px" }}></div>
+          <div style={{ height: "100px" }}></div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
