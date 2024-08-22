@@ -8,6 +8,7 @@
     font-weight: 500;
     border: none;
     outline: none;
+    cursor: pointer;
 
     &:hover{
         box-shadow: 0 0 .5rem darken($primary,25);
@@ -16,6 +17,12 @@
     &.secondary{
         background: #fff;
         color: $primary;
+    }
+
+    &.tertiary{
+        background: transparent;
+        color: lighten($primary,7);
+        border: 2px solid lighten($primary,7);
     }
 
     &.inactive{

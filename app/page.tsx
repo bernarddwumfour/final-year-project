@@ -15,7 +15,6 @@ export default function Home() {
 
       <Modal />
 
-
       <div id="hero">
       <div className="deco"></div>
         <div className="intro">
@@ -48,6 +47,7 @@ export default function Home() {
         {/* <div className="image">
           <Image src={"/homeimage.jpg"} alt="homeimage" fill />
         </div> */}
+
       </div>
 
       <div id="services">
