@@ -97,14 +97,20 @@
     
 
     &.circle1{
-        top: -150px;
-        left: -150px;
+        top: -110px;
+        left: -110px;
+        img{
+          transform: scale(.8);
+        }
     }
     
 
     &.circle2{
-        top: -150px;
-        right: -150px;
+        top: -110px;
+        right: -110px;
+        img{
+          transform: scale(.8);
+        }
     }
     
 
@@ -152,6 +158,7 @@
         flex: none;
         background: lightgrey;
         border-radius: 50%;
+        position: relative;
       }
 
       .detail {
@@ -238,6 +245,11 @@
         box-sizing: content-box;
         transform: scale(1.1);
         transform-origin: center;
+        overflow: hidden;
+
+        img{
+          transform: scale(.65);
+        }
 
       }
       .hider{
@@ -329,7 +341,7 @@
       justify-content: center;
       margin: 3rem 0;
       align-items: center;
-      background: rgb(223, 223, 223);
+      background: rgb(236, 236, 236);
       @extend .center;
       padding: 0 1rem;
       position: relative;

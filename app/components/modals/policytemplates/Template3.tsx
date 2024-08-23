@@ -1,5 +1,6 @@
 "use client";
 import { Appcontext } from "@/app/contexts/AppcontextProvider";
+import Image from "next/image";
 import React, { useContext } from "react";
 const Template3 = () => {
   const { summarisedpolicy } = useContext(Appcontext);
@@ -17,7 +18,14 @@ const Template3 = () => {
         <div className="details">
           <div className="flex">
             <div className="hider"></div>
-            <div className="icon"></div>
+            <div className="icon">
+            <Image
+            src={"/template3/collection.png"}
+            alt="data collection"
+            fill
+            style={{ objectFit: "cover" }}
+          />
+            </div>
             <div className="detail">
               <h2>Data Collection</h2>
               <p>{summarisedpolicy && summarisedpolicy.DataCollection}</p>
@@ -26,7 +34,14 @@ const Template3 = () => {
 
           <div className="flex">
             <div className="hider"></div>
-            <div className="icon"></div>
+            <div className="icon">
+            <Image
+            src={"/template3/usage.png"}
+            alt="data usage"
+            fill
+            style={{ objectFit: "cover" }}
+          />
+            </div>
             <div className="detail">
               <h2>Data Usage</h2>
               <p>{summarisedpolicy && summarisedpolicy.DataUsage}</p>
@@ -35,7 +50,14 @@ const Template3 = () => {
 
           <div className="flex">
             <div className="hider"></div>
-            <div className="icon"></div>
+            <div className="icon">
+            <Image
+            src={"/template3/sharing.png"}
+            alt="data sharing"
+            fill
+            style={{ objectFit: "cover" }}
+          />
+            </div>
             <div className="detail">
               <h2>Data Sharing</h2>
               <p>{summarisedpolicy && summarisedpolicy.DataSharing}</p>
@@ -44,7 +66,14 @@ const Template3 = () => {
 
           <div className="flex">
             <div className="hider"></div>
-            <div className="icon"></div>
+            <div className="icon">
+            <Image
+            src={"/template3/storage.png"}
+            alt="data storage"
+            fill
+            style={{ objectFit: "cover" }}
+          />
+            </div>
             <div className="detail">
               <h2>Data storage</h2>
               <p>{summarisedpolicy && summarisedpolicy.DataStorage}</p>
@@ -53,7 +82,14 @@ const Template3 = () => {
 
           <div className="flex">
             <div className="hider"></div>
-            <div className="icon"></div>
+            <div className="icon">
+            <Image
+            src={"/template3/rights.png"}
+            alt="user rights"
+            fill
+            style={{ objectFit: "cover" }}
+          />
+            </div>
             <div className="detail">
               <h2>Rights And Protection</h2>
               <p>{summarisedpolicy && summarisedpolicy.RightsandProtection}</p>
