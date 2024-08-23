@@ -10,7 +10,7 @@ import Template5 from "./policytemplates/Template5";
 
 
 function getRandomNumber() {
-  return Math.floor(Math.random() * 4) + 1;
+  return Math.floor(Math.random() * 5) + 1;
 }
 const Policymodal = () => {
   const [random,setrandom] = useState<number>()
@@ -45,11 +45,11 @@ const Policymodal = () => {
   return (
     <div className="policy">
       <div  ref={targetRef}>
-      {/* {random ==1 && <Template1 />}
+      {random ==1 && <Template1 />}
       {random ==2 && <Template2 />}
       {random ==3 && <Template3/>}
-      {random ==4 && <Template4/>} */}
-      <Template5/>
+      {random ==4 && <Template4/>}
+      {random ==5 && <Template5/>}
       </div>
       <div className="actions">
         <button  className={`click ${loading && "inactive"}`} disabled = {loading}  onClick={() => saveaspdf()}>
