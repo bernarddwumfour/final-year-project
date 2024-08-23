@@ -12,7 +12,7 @@ main {
   background: rgb(10, 16, 41);
 }
 
-.center, #loginpage .form, #homepage #services .servicegrid .service .image, #homepage #hero .intro .socials, #homepage #hero .intro p, #homepage #hero .intro h1, #homepage #hero, .pagemessage, .template4 .details > .flex, .template4, .template3 .details > .flex, .template3, .template2, .template1, #modal .modal > div.policy .actions, #modal .modal > div.policy, .form form .click, header nav, .page .subheading::before, .page {
+.center, #loginpage .form, #homepage #services .servicegrid .service .image, #homepage #hero .intro .socials, #homepage #hero .intro p, #homepage #hero .intro h1, #homepage #hero, .pagemessage, .template5, .template4 .details > .flex, .template4, .template3 .details > .flex, .template3, .template2, .template1, #modal .modal > div.policy .actions, #modal .modal > div.policy, .form form .click, header nav, .page .subheading::before, .page {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -613,7 +613,8 @@ footer div p {
   transform-origin: center;
   position: relative;
 }
-.template4 .details > .flex .hider, .template4 .details > .flex .hider2 {
+.template4 .details > .flex .hider,
+.template4 .details > .flex .hider2 {
   position: absolute;
   width: 80px;
   height: 100%;
@@ -651,6 +652,93 @@ footer div p {
   color: rgb(121, 121, 121);
   font-size: 0.8rem;
   max-width: 600px;
+}
+
+.template5 {
+  position: relative;
+  background: linear-gradient(90deg, rgb(146, 79, 209), 15%, rgb(92, 79, 209), 85%, rgb(146, 79, 209));
+  z-index: 11;
+  padding-top: 1.5rem;
+  padding-bottom: 4rem;
+}
+.template5 .circle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+}
+.template5 .heading {
+  padding: 1.7rem 0 1rem;
+  color: #fff;
+  font-size: 1.05rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-style: italic;
+}
+.template5 .heading span {
+  font-size: 2.1rem;
+  display: block;
+  padding: 0.3em 0;
+}
+.template5 .details {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.template5 .details > .flex {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+  margin: 1.2rem 0;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: linear-gradient(270deg, rgba(92, 79, 209, 0.603), rgba(146, 79, 209, 0.575));
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 0.5rem 0;
+  position: relative;
+  border-top-left-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+}
+.template5 .details > .flex:nth-child(even) {
+  align-self: flex-end;
+}
+.template5 .details > .flex:nth-child(odd) {
+  flex-direction: row-reverse;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 5rem;
+  border-bottom-right-radius: 5rem;
+  background: linear-gradient(90deg, rgba(92, 79, 209, 0.603), rgba(146, 79, 209, 0.575));
+}
+.template5 .details > .flex .icon {
+  position: relative;
+  width: 190px;
+  height: 170px;
+  flex: none;
+  border-radius: 50%;
+  box-sizing: content-box;
+  transform-origin: center;
+  transform: scale(1.2);
+}
+.template5 .details > .flex .icon img {
+  transform: scale(0.9);
+}
+.template5 .details > .flex .detail h2 {
+  text-transform: capitalize;
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 0 2rem;
+}
+.template5 .details > .flex .detail p {
+  color: #fff;
+  font-size: 0.8rem;
+  max-width: 500px;
+  padding: 0 2rem;
 }
 
 .pagemessage {

@@ -6,6 +6,7 @@ import Template2 from "./policytemplates/Template2";
 import { usePDF } from 'react-to-pdf';
 import Template3 from "./policytemplates/Template3";
 import Template4 from "./policytemplates/template4";
+import Template5 from "./policytemplates/Template5";
 
 
 function getRandomNumber() {
@@ -44,10 +45,11 @@ const Policymodal = () => {
   return (
     <div className="policy">
       <div  ref={targetRef}>
-      {random ==1 && <Template1 />}
+      {/* {random ==1 && <Template1 />}
       {random ==2 && <Template2 />}
       {random ==3 && <Template3/>}
-      {random ==4 && <Template4/>}
+      {random ==4 && <Template4/>} */}
+      <Template5/>
       </div>
       <div className="actions">
         <button  className={`click ${loading && "inactive"}`} disabled = {loading}  onClick={() => saveaspdf()}>
