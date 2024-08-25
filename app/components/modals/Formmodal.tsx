@@ -70,7 +70,6 @@ const Formmodal = () => {
       } else if (fileType === "text/plain") {
         const text = await extractTxtText(file);
         setfilecontent(text);
-        console.log(text)
       } else {
         setfileerror("Invalid file type. Please upload a PDF, DOCX, or TXT file.");
       }
@@ -78,7 +77,7 @@ const Formmodal = () => {
       setfilecontent("");
       setfileerror("No file selected");
     }
-    console.log(filecontent);
+    // console.log(filecontent);
   };
 
   const handlesubmit = async (
@@ -104,15 +103,15 @@ const Formmodal = () => {
     }
 
     // Everything has been checked so policy can now be uploaded to model
-    let policydata;
+    let policydata = policy;
     if (policy !== "") {
-      policydata = policy.replace(/"/g, '\\"').replace(/\n/g, "\\n");
+      policydata = policy.replace(/"/g, '\\"').replace(/\n/g, "\\n").replace(/\n{2,}/g, '\\n\\n');
     } else {
-      policydata = filecontent.replace(/"/g, '\\"').replace(/\n/g, "\\n");
+      policydata = filecontent.replace(/"/g, '\\"').replace(/\n/g, "\\n").replace(/\n{2,}/g, '\\n\\n');
     }
+    console.log(policydata);
 
-    // console.log(policydata);
-
+    
     //Set loading state to deactive form button
     setloading(true)
     
@@ -125,7 +124,7 @@ const Formmodal = () => {
     }
 
     let data = await res?.json();
-    // console.log(data);
+    console.log(data);
     addsummarisedpolicy({
       DataCollection: data["Data Collection"].replace(/\\n/g, '\n'),
       DataUsage: data["Data Usage"].replace(/\\n/g, '\n'),

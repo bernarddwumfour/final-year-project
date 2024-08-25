@@ -3,10 +3,10 @@ import Image from "next/image";
 import React, { useContext, useEffect, useState } from "react";
 import Template1 from "./policytemplates/Template1";
 import Template2 from "./policytemplates/Template2";
-import { usePDF } from 'react-to-pdf';
 import Template3 from "./policytemplates/Template3";
 import Template4 from "./policytemplates/template4";
 import Template5 from "./policytemplates/Template5";
+import { usePDF } from 'react-to-pdf';
 
 
 function getRandomNumber() {
