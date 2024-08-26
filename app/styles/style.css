@@ -184,7 +184,7 @@ header > menu {
   }
   header.active > menu a {
     text-decoration: none;
-    color: rgb(196, 196, 196);
+    color: rgb(216, 216, 216);
     padding: 0.5rem 0;
     font-size: 0.85rem;
   }
@@ -202,7 +202,9 @@ footer div p {
 
 .form {
   width: 100%;
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem;
+  background: rgba(8, 13, 33, 0.5);
+  border-radius: 0.75rem;
 }
 .form .label {
   text-align: center;
@@ -230,7 +232,7 @@ footer div p {
   outline: none;
   padding: 0.65rem;
   border-radius: 0.35rem;
-  color: rgb(196, 196, 196);
+  color: rgb(216, 216, 216);
 }
 .form form .control input:focus, .form form .control textarea:focus {
   border-color: rgb(92, 79, 209);
@@ -255,7 +257,7 @@ footer div p {
 }
 .form form .redirect {
   padding: 1.5rem 0;
-  color: rgb(196, 196, 196);
+  color: rgb(216, 216, 216);
 }
 .form form .redirect a {
   color: rgb(92, 79, 209);
@@ -656,7 +658,7 @@ footer div p {
 
 .template5 {
   position: relative;
-  background: linear-gradient(90deg, rgb(146, 79, 209), 15%, rgb(92, 79, 209), 85%, rgb(146, 79, 209));
+  background: linear-gradient(90deg, rgb(146, 79, 209), rgb(92, 79, 209), rgb(146, 79, 209));
   z-index: 11;
   padding-top: 1.5rem;
   padding-bottom: 4rem;
@@ -761,16 +763,13 @@ footer div p {
   color: rgb(218, 99, 63);
 }
 
-#homepage {
-  background: rgb(10, 16, 41);
-}
 #homepage #hero {
   padding: 4rem 1rem 9rem;
   display: flex;
   gap: 3rem;
   align-items: center;
   justify-content: space-between;
-  max-width: 1500px;
+  background: linear-gradient(120deg, #0f183e, 15%, rgb(10, 16, 41), 80%, #0f183e);
   overflow-x: hidden;
 }
 #homepage #hero .deco {
@@ -802,7 +801,7 @@ footer div p {
   font-size: 1.1rem;
   padding: 1.5rem 1.3rem;
   line-height: 140%;
-  color: rgb(196, 196, 196);
+  color: rgb(216, 216, 216);
   max-width: 1100px;
 }
 #homepage #hero .intro .socialstext {
@@ -846,9 +845,9 @@ footer div p {
   padding: 1rem;
 }
 #homepage #services .servicegrid .service .image {
-  height: 300px;
+  height: 220px;
   position: relative;
-  max-width: 400px;
+  max-width: 300px;
 }
 #homepage #services .servicegrid .service .image img {
   -o-object-fit: cover;
@@ -865,7 +864,10 @@ footer div p {
 #homepage #services .servicegrid .service .details .description {
   font-size: 0.9rem;
   line-height: 160%;
-  color: rgb(196, 196, 196);
+  color: rgb(216, 216, 216);
+}
+#homepage #about {
+  background: linear-gradient(120deg, #0f183e, 15%, rgb(10, 16, 41), 80%, #0f183e);
 }
 #homepage #about .aboutflex {
   display: flex;
@@ -879,7 +881,7 @@ footer div p {
 }
 #homepage #about .aboutflex .abouttext {
   font-size: 1.1rem;
-  color: rgb(196, 196, 196);
+  color: rgb(216, 216, 216);
 }
 #homepage #about .aboutflex .image {
   height: 500px;
@@ -917,6 +919,9 @@ footer div p {
   font-size: 0.93rem;
   color: grey;
   padding-bottom: 1rem;
+}
+#homepage #contact {
+  background: linear-gradient(120deg, #0f183e, 15%, rgb(10, 16, 41), 80%, #0f183e);
 }
 #homepage #contact .contactflex {
   padding: 5rem 0;
@@ -1058,7 +1063,7 @@ footer div p {
   font-size: 1.45rem;
 }
 #aboutpage .about .content {
-  color: rgb(196, 196, 196);
+  color: rgb(216, 216, 216);
   padding-top: 1rem;
 }
 

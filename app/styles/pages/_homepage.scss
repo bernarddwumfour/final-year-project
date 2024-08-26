@@ -11,7 +11,8 @@
   //   // background: $primary;
   //   opacity: .0.8;
   // }
-  background: rgb(10, 16, 41);
+  // background: rgb(10, 16, 41);
+  // background: linear-gradient(to-right,$secondary,lighten($secondary,10),$secondary);
 
   #hero {
     // background: lightgrey;
@@ -20,8 +21,8 @@
     gap: 3rem;
     align-items: center;
     justify-content: space-between;
-    max-width: 1500px;
-    // background: rgba(225,225,225);
+    // max-width: 1500px;
+    background: linear-gradient(120deg,lighten($secondary,5),15%,$secondary,80%,lighten($secondary,5));
     // backdrop-filter: blur(0.8);
     @extend.center;
     overflow-x: hidden;
@@ -114,10 +115,10 @@
         padding: 1rem;
 
         .image {
-          height: 300px;
+          height: 220px;
           // background: lightgrey;
           position: relative;
-          max-width: 400px;
+          max-width: 300px;
           @extend .center;
 
           img {
@@ -144,6 +145,8 @@
   }
 
   #about {
+    background: linear-gradient(120deg,lighten($secondary,5),15%,$secondary,80%,lighten($secondary,5));
+
     .aboutflex {
       display: flex;
       gap: 3rem;
@@ -209,6 +212,8 @@
   }
 
   #contact {
+    background: linear-gradient(120deg,lighten($secondary,5),15%,$secondary,80%,lighten($secondary,5));
+
     .contactflex {
       padding: 5rem 0;
       display: flex;

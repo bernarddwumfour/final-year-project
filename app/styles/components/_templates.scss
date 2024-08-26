@@ -395,7 +395,7 @@
   position: relative;
   // overflow: hidden;
   @extend .center;
-  background: linear-gradient(90deg,rgb(146, 79, 209),15%,rgb(92, 79, 209),85%,rgb(146, 79, 209));
+  background: linear-gradient(90deg,rgb(146, 79, 209),rgb(92, 79, 209),rgb(146, 79, 209));
   z-index: 11;
   // top: 6rem;
   padding-top: 1.5rem;

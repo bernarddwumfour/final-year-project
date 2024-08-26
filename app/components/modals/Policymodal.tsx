@@ -59,7 +59,7 @@ const Policymodal = () => {
           Cancel
         </button>
         <button className="click tertiary" onClick={regenrate}>
-          Regenrate template
+          Regenerate template
         </button>
       </div>
     </div>

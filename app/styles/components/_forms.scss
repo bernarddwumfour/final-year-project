@@ -1,7 +1,10 @@
 
 .form{
     width: 100%;
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
+    background: darken(rgba(10, 16, 41, 0.5),2);
+    border-radius: .75rem;
+
 
     .label{
         text-align: center;

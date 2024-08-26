@@ -5,6 +5,7 @@ import Modal from "./components/Modal";
 import { FaFacebookF, FaXTwitter } from "react-icons/fa6";
 import { FaSnapchatGhost } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
+import Socialicons from "./components/Socialicons";
 
 export default function Home() {
   return (
@@ -27,20 +28,7 @@ export default function Home() {
             </p>
             <Homebutton />
 
-            <div className="socials">
-              <span style={{padding: ".6rem .35rem .25rem",borderRadius: ".7rem"}}>
-              <FaXTwitter />
-              </span>
-              <span style={{padding: ".6rem .35rem .25rem",borderRadius: ".7rem"}}>
-              <FaSnapchatGhost />
-              </span>
-              <span style={{padding: ".6rem .35rem .25rem",borderRadius: ".7rem"}}>
-              <RiInstagramFill />
-              </span>
-              <span style={{padding: ".6rem .35rem .25rem",borderRadius: ".7rem"}}>
-              <FaFacebookF />
-              </span>
-            </div>
+            <Socialicons/>
           </div>
         </div>
 
@@ -175,7 +163,7 @@ export default function Home() {
             <div className="image">
               <Image src={"/contactimage.jpg"} alt="homeimage" fill />
             </div>
-            <div className="form">
+            <div className="form" style={{background : 'transparent'}}>
               <form action="">
                 <div className="control">
                   <input type="text" name="name" />
