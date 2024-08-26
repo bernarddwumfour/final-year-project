@@ -11,13 +11,19 @@ const extractDocxText = async (file: File): Promise<string> => {
 };
 
 const extractTxtText = async (file: File): Promise<string> => {
-  return await file.text();
+  // Extract the content of the file as a string
+  const text = await file.text();
+
+  // Normalize all newlines to `\n` (handling different OS newline formats)
+  const cleanedText = text.replace(/\r\n|\r/g, '\n').replace(/\n\s*\n+/g, '\n\n');
+
+  // Return the processed text
+  return cleanedText;
 };
 
 
-
-
-const uploadtomodel = async (policy: { data: string }) => {
+const uploadtomodel = async (policy:{ data: string }) => {
+  console.log(policy)
   try {
     const res = await fetch(
       "https://finalyearproject-ai-1.onrender.com/predict",
@@ -70,6 +76,7 @@ const Formmodal = () => {
       } else if (fileType === "text/plain") {
         const text = await extractTxtText(file);
         setfilecontent(text);
+        console.log(text)
       } else {
         setfileerror("Invalid file type. Please upload a PDF, DOCX, or TXT file.");
       }
@@ -105,32 +112,34 @@ const Formmodal = () => {
     // Everything has been checked so policy can now be uploaded to model
     let policydata = policy;
     if (policy !== "") {
-      policydata = policy.replace(/"/g, '\\"').replace(/\n/g, "\\n").replace(/\n{2,}/g, '\\n\\n');
+      policydata = policy;
     } else {
-      policydata = filecontent.replace(/"/g, '\\"').replace(/\n/g, "\\n").replace(/\n{2,}/g, '\\n\\n');
+      policydata = filecontent;
     }
-    console.log(policydata);
-
+    policydata = policydata;
     
+    
+    console.log(policydata);
     //Set loading state to deactive form button
     setloading(true)
-    
+    let fetchdata = { data: policydata }
 
-    let res = await uploadtomodel({ data: policydata });
-    if (!res?.ok) {
+    let res = await uploadtomodel(fetchdata);
+    if (!res.ok) {
+      // console.log(res)
       showpagemessage("Unable to summarise policy", "error");
       setloading(false)
       return;
     }
 
-    let data = await res?.json();
+    let data = await res.json();
     console.log(data);
     addsummarisedpolicy({
-      DataCollection: data["Data Collection"].replace(/\\n/g, '\n'),
-      DataUsage: data["Data Usage"].replace(/\\n/g, '\n'),
-      DataStorage: data["Data Storage"].replace(/\\n/g, '\n'),
-      DataSharing: data["Data Sharing"].replace(/\\n/g, '\n'),
-      RightsandProtection: data["Rights and Protection"].replace(/\\n/g, '\n'),
+      DataCollection: data["Data Collection"].replace(/\\n\\n/g, '\n\n').replace(/\\n/g, '\n'),
+      DataUsage: data["Data Usage"].replace(/\\n\\n/g, '\n\n').replace(/\\n/g, '\n'),
+      DataStorage: data["Data Storage"].replace(/\\n\\n/g, '\n\n').replace(/\\n/g, '\n'),
+      DataSharing: data["Data Sharing"].replace(/\\n\\n/g, '\n\n').replace(/\\n/g, '\n'),
+      RightsandProtection: data["Rights and Protection"].replace(/\\n\\n/g, '\n\n').replace(/\\n/g, '\n'),
     });
 
     togglemodalcontent("policy");
