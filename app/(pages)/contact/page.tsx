@@ -1,3 +1,4 @@
+import MessageForm from "@/app/components/MessageForm";
 import Image from "next/image";
 import React from "react";
 
@@ -16,24 +17,7 @@ const Contactpage = () => {
               <Image src={'/contactimage.jpg'} alt="contact image" fill/>
               </div>
               <div className="form">
-                <form action="">
-                  <div className="control">
-                    <input type="text" name="name" />
-                    <label htmlFor="name"> Name</label>
-                  </div>
-
-                  <div className="control">
-                    <input type="text" name="email" />
-                    <label htmlFor="mail"> Email</label>
-                  </div>
-
-                  <div className="control">
-                    <textarea name="message" id="message"></textarea>
-                    <label htmlFor="message"> Message</label>
-                  </div>
-
-                  <button className="click">Send Messsage</button>
-                </form>
+              <MessageForm type="message"/>
               </div>
             </div>
 

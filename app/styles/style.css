@@ -782,6 +782,7 @@ footer div p {
   z-index: 20;
   background: #070b1d;
   border-radius: 0.35rem;
+  text-transform: capitalize;
 }
 .pagemessage.hidden {
   display: none !important;

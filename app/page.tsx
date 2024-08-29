@@ -6,6 +6,7 @@ import { FaFacebookF, FaXTwitter } from "react-icons/fa6";
 import { FaSnapchatGhost } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import Socialicons from "./components/Socialicons";
+import MessageForm from "./components/MessageForm";
 
 export default function Home() {
   return (
@@ -164,24 +165,7 @@ export default function Home() {
               <Image src={"/contactimage.jpg"} alt="homeimage" fill />
             </div>
             <div className="form" style={{background : 'transparent'}}>
-              <form action="">
-                <div className="control">
-                  <input type="text" name="name" />
-                  <label htmlFor="name"> Name</label>
-                </div>
-
-                <div className="control">
-                  <input type="text" name="email" />
-                  <label htmlFor="mail"> Email</label>
-                </div>
-
-                <div className="control">
-                  <textarea name="message" id="message"></textarea>
-                  <label htmlFor="message"> Message</label>
-                </div>
-
-                <button className="click">Send Messsage</button>
-              </form>
+              <MessageForm type="review"/>
             </div>
           </div>
         </div>
