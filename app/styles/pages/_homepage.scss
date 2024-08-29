@@ -80,10 +80,20 @@
         font-size: 1.61rem;
         position: relative;
         display: flex;
-        gap: 0.55rem;
+        gap: 0.15rem;
         @extend .center;
-        color: #c2c2c2 !important;
+        color: #d8d8d8 !important;
         // justify-content: center;
+
+        span{
+          border-radius: 50%;
+          // background: red;
+          padding: 0 .7rem;
+
+          &:hover{
+            background: #ffffff31;
+          }
+        }
       }
     }
 

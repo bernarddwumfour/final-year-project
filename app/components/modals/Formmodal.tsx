@@ -197,7 +197,7 @@ const Formmodal = () => {
             style={{ left: "auto", transform: "translateX(0)" }}
             disabled = {loading}
           >
-            {loading ? "Uploading Policy ... " :"Summarize Policy"}
+            {loading ? <div style={{display : "flex",gap:".65rem"}}>Uploading Policy <div className="lds-dual-ring"></div></div>  :"Summarize Policy"}
           </button>
           <button
             className="click secondary"

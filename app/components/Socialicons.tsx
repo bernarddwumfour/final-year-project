@@ -18,16 +18,16 @@ const Socialicons = () => {
 
   return (
     <div className="socials">
-      <span onClick={()=>displaypolicy(summarisedpolicies.x)} style={{ padding: ".6rem .35rem .25rem", borderRadius: ".7rem" , cursor : "pointer"}}>
+      <span onClick={()=>displaypolicy(summarisedpolicies.x)} style={{ padding: ".6rem .6rem .25rem", cursor : "pointer"}}>
         <FaXTwitter />
       </span>
-      <span onClick={()=>displaypolicy(summarisedpolicies.snapchat)}  style={{ padding: ".6rem .35rem .25rem", borderRadius: ".7rem" , cursor : "pointer"}}>
+      <span onClick={()=>displaypolicy(summarisedpolicies.snapchat)}  style={{ padding: ".6rem .6rem .25rem", cursor : "pointer"}}>
         <FaSnapchatGhost />
       </span>
-      <span onClick={()=>displaypolicy(summarisedpolicies.instagram)}  style={{ padding: ".6rem .35rem .25rem", borderRadius: ".7rem" , cursor : "pointer"}}>
+      <span onClick={()=>displaypolicy(summarisedpolicies.instagram)}  style={{ padding: ".6rem .6rem .25rem", cursor : "pointer"}}>
         <RiInstagramFill />
       </span>
-      <span onClick={()=>displaypolicy(summarisedpolicies.facebook)}  style={{ padding: ".6rem .35rem .25rem", borderRadius: ".7rem" , cursor : "pointer"}}>
+      <span onClick={()=>displaypolicy(summarisedpolicies.facebook)}  style={{ padding: ".6rem .6rem .25rem", cursor : "pointer"}}>
         <FaFacebookF />
       </span>
     </div>

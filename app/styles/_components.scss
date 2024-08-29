@@ -29,3 +29,36 @@
         opacity: .5;
     }
 }
+
+
+//CSS spinner
+
+.lds-dual-ring,
+.lds-dual-ring:after {
+  box-sizing: border-box;
+}
+.lds-dual-ring {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 22px;
+  height: 22px;
+//   margin: 8px;
+  border-radius: 50%;
+  border: 2.4px solid currentColor;
+  border-color: currentColor transparent currentColor transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

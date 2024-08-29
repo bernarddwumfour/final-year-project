@@ -134,7 +134,7 @@ const Signup = () => {
                 </div>
 
                 <button className={`click ${loading && "inactive"}`} type="submit">
-                  {loading ? "Creating Account" :"Signup"}
+                  {loading ? <div style={{display : "flex",gap:".65rem"}}>Creating account <div className="lds-dual-ring"></div></div> :"Signup"}
                 </button>
 
                 <p className="redirect">
