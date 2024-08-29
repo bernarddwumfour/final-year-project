@@ -11,7 +11,7 @@ const Aboutpage = () => {
           <div className="about">
             <h3 className="title">Introduction</h3>
             <p className="content">
-              Welcome to PolEasy! In the complex world of digital privacy, we're
+              Welcome to PolEasy! In the complex world of digital privacy, we&apos;re
               your trusted guide. As we navigate the vast landscape of online
               interactions, it&apos;s crucial to understand how our personal data is
               being used. Privacy policies, however, often read like a foreign
@@ -85,7 +85,7 @@ const Aboutpage = () => {
             <h3 className="title">Join Us</h3>
             <p className="content">
               We invite you to join us on our journey to make privacy policies
-              accessible to everyone. Whether you're an everyday internet user
+              accessible to everyone. Whether you&apos;re an everyday internet user
               looking to protect your data or a business owner wanting to ensure
               compliance, PolEasy is here to help. Together, we can ensure that
               privacy isn&apos;t just an afterthought—it&apos;s a priority. Let&apos;s create a
