@@ -16,7 +16,7 @@ const DisplayingErrorMessagesSchema = Yup.object().shape({
   password: Yup.string().required("Password is required"),
 });
 
-const signin = async (data: { email: string; password: string }) => {
+export const signin = async (data: { email: string; password: string }) => {
   const url: string = process.env.API_URL as string;
   // alert(url)
 

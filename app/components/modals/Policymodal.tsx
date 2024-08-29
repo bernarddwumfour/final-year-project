@@ -53,7 +53,7 @@ const Policymodal = () => {
       </div>
       <div className="actions">
         <button  className={`click ${loading && "inactive"}`} disabled = {loading}  onClick={() => saveaspdf()}>
-          {loading ? "Downloading" :"Save"}
+          {loading ? <div style={{display : "flex",gap:".65rem"}}>Downloading<div className="lds-dual-ring"></div></div> :"Save"}
           </button>
         <button className="click secondary" onClick={cancel}>
           Cancel

@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import AppcontextProvider from "./contexts/AppcontextProvider";
 import Pagemessage from "./components/Pagemessage";
+import { SessionProvider } from "next-auth/react";
 
 // import { Inter } from "next/font/google";
 // const inter = Inter({ subsets: ["latin"] });
@@ -22,10 +23,12 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <AppcontextProvider>
-        <Header />
-          <Pagemessage />
-          {children}
-        <Footer />
+          {/* <SessionProvider> */}
+            <Header />
+            <Pagemessage />
+            {children}
+            <Footer />
+          {/* </SessionProvider> */}
         </AppcontextProvider>
       </body>
     </html>

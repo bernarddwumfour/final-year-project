@@ -27,9 +27,7 @@ const Socialicons = () => {
       <span onClick={()=>displaypolicy(summarisedpolicies.instagram)}  style={{ padding: ".6rem .6rem .25rem", cursor : "pointer"}}>
         <RiInstagramFill />
       </span>
-      <span onClick={()=>displaypolicy(summarisedpolicies.facebook)}  style={{ padding: ".6rem .6rem .25rem", cursor : "pointer"}}>
-        <FaFacebookF />
-      </span>
+     
     </div>
   );
 };

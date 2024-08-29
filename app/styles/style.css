@@ -352,6 +352,7 @@ footer div p {
   position: fixed;
   bottom: -3rem;
   z-index: 11;
+  width: 100%;
 }
 
 .template1 {
