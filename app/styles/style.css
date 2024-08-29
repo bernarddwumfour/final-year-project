@@ -783,7 +783,7 @@ footer div p {
   z-index: 20;
   background: #070b1d;
   border-radius: 0.35rem;
-  text-transform: capitalize;
+  color: #fff;
 }
 .pagemessage.hidden {
   display: none !important;
@@ -793,6 +793,9 @@ footer div p {
 }
 .pagemessage.error {
   color: rgb(218, 99, 63);
+}
+.pagemessage.info {
+  color: #fff;
 }
 
 #homepage #hero {

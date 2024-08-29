@@ -7,6 +7,7 @@ import Template3 from "./policytemplates/Template3";
 import Template4 from "./policytemplates/template4";
 import Template5 from "./policytemplates/Template5";
 import { usePDF } from 'react-to-pdf';
+import { useRouter } from "next/navigation";
 
 
 function getRandomNumber() {
@@ -15,6 +16,8 @@ function getRandomNumber() {
 const Policymodal = () => {
   const [random,setrandom] = useState<number>()
   const { toPDF, targetRef } = usePDF({filename: 'Summarised privacy policy.pdf'});
+  const {loggedInuser ,showpagemessage} = useContext(Appcontext)
+  const router = useRouter()
 
   useEffect(()=>{
     setrandom(getRandomNumber())
@@ -24,6 +27,13 @@ const Policymodal = () => {
 
 
   const saveaspdf = ()=>{
+
+    if(loggedInuser.id == ""){
+      router.push("/login")
+      showpagemessage("Please log in to download","info")
+      return
+    }
+
     setloading(true)
     toPDF()
     setTimeout(() => {

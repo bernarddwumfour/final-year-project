@@ -22,7 +22,11 @@ export const Appcontext = createContext<appcontext>({
     DataSharing: "",
     RightsandProtection: "",
   },
-  addsummarisedpolicy : ()=>{}
+  addsummarisedpolicy : ()=>{},
+  loggedInuser:{id: "",firstname : "",surname : "",email : ""},
+  setCurrentUser : ()=>{},
+  logoutUser :()=>{}
+
 });
 
 //Context Provider
@@ -41,6 +45,17 @@ const AppcontextProvider = ({ children }: Props) => {
   const [pagemessagetype, setpagemessagetype] = useState<
     "info" | "success" | "error"
   >("info");
+
+
+  const [loggedInuser,setloggedInuser] = useState<loggedInUser>({id: "",firstname : "",surname : "",email : ""})
+  const setCurrentUser = (user : loggedInUser)=>{
+    setloggedInuser(user)
+  }
+
+  const logoutUser = ()=>{
+    setloggedInuser({id: "",firstname : "",surname : "",email : ""})
+    showpagemessage("You have been logged out","info")
+  }
 
 
   //Toggling Modal state
@@ -98,7 +113,10 @@ const AppcontextProvider = ({ children }: Props) => {
         pagemessagetype: pagemessagetype,
         showpagemessage,
         summarisedpolicy,
-        addsummarisedpolicy
+        addsummarisedpolicy,
+        loggedInuser,
+        setCurrentUser,
+        logoutUser
       }}
     >
       {children}

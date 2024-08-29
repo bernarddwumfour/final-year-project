@@ -7,7 +7,8 @@
     z-index: 20;
     background: darken($secondary,3);
     border-radius: $border_radius;
-    text-transform: capitalize;
+    // text-transform: capitalize;
+    color: #fff;
 
     &.hidden{
         display: none !important;
@@ -19,6 +20,10 @@
 
     &.error{
         color: rgb(218, 99, 63);
+    }
+    
+    &.info{
+        color: #fff;
     }
     
     

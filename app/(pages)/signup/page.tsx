@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { useRouter } from "next/navigation";
@@ -50,8 +50,15 @@ const createuser = async (data: {
 
 const Signup = () => {
   const router = useRouter();
-  const { showpagemessage } = useContext(Appcontext);
+  const { showpagemessage ,loggedInuser } = useContext(Appcontext);
   const [loading,setloading] = useState<boolean>(false)
+
+  useEffect(() => {
+    if (loggedInuser.id != "") {
+      router.push("/");
+      return;
+    }
+  }, []);
   return (
     <main id="loginpage">
       <div className="page">

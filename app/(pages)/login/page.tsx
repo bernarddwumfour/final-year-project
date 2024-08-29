@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
@@ -16,7 +16,7 @@ const DisplayingErrorMessagesSchema = Yup.object().shape({
   password: Yup.string().required("Password is required"),
 });
 
- const signin = async (data: { email: string; password: string }) => {
+const signin = async (data: { email: string; password: string }) => {
   const url: string = process.env.API_URL as string;
   // alert(url)
 
@@ -41,10 +41,17 @@ const DisplayingErrorMessagesSchema = Yup.object().shape({
 };
 
 const Login = () => {
-  const { showpagemessage } = useContext(Appcontext);
+  const { showpagemessage, setCurrentUser, loggedInuser } =
+  useContext(Appcontext);
+  const [loading, setloading] = useState<boolean>(false);
   const router = useRouter();
-  const [loading,setloading] = useState<boolean>(false)
 
+  useEffect(() => {
+    if (loggedInuser.id != "") {
+      router.push("/");
+      return;
+    }
+  }, []);
   return (
     <main id="loginpage">
       <div className="page">
@@ -59,26 +66,27 @@ const Login = () => {
             }}
             validationSchema={DisplayingErrorMessagesSchema}
             onSubmit={async (values, { setSubmitting }) => {
-              setloading(true)
+              setloading(true);
               try {
                 let res = await signin(values);
                 if (res.ok) {
                   let data = await res.json();
                   router.push("/");
-                  showpagemessage(`Login Successful`, "success"); 
-                  setloading(false)
+                  showpagemessage(`Login Successful`, "success");
+                  setloading(false);
+                  setCurrentUser(data.user);
                   // alert("Login succesful")
                 } else {
                   // Display error message
                   let errorData = await res.json();
                   showpagemessage(` ${errorData.message}`, "error");
-                  setloading(false)
+                  setloading(false);
                   console.error("Sign in error:", errorData);
                 }
               } catch (error) {
                 console.error("Sign in error:", error);
                 showpagemessage("An unexpected error occurred.", "error");
-                setloading(false)
+                setloading(false);
               } finally {
                 setSubmitting(false);
               }
@@ -96,12 +104,22 @@ const Login = () => {
                   <small>
                     {touched.password && errors.password && errors.password}
                   </small>
-                  <Field name="password" type="password"/>
+                  <Field name="password" type="password" />
                   <label htmlFor="password"> Password</label>
                 </div>
 
-                <button className={`click ${loading && "inactive"}`} type="submit" disabled = {loading} >
-                  {loading ? <div style={{display : "flex",gap:".65rem"}}>signing in <div className="lds-dual-ring"></div></div> :"Login"}
+                <button
+                  className={`click ${loading && "inactive"}`}
+                  type="submit"
+                  disabled={loading}
+                >
+                  {loading ? (
+                    <div style={{ display: "flex", gap: ".65rem" }}>
+                      signing in <div className="lds-dual-ring"></div>
+                    </div>
+                  ) : (
+                    "Login"
+                  )}
                 </button>
 
                 <p className="redirect">
