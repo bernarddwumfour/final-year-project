@@ -16,7 +16,7 @@ const DisplayingErrorMessagesSchema = Yup.object().shape({
   password: Yup.string().required("Password is required"),
 });
 
-export const signin = async (data: { email: string; password: string }) => {
+ const signin = async (data: { email: string; password: string }) => {
   const url: string = process.env.API_URL as string;
   // alert(url)
 
@@ -65,7 +65,7 @@ const Login = () => {
                 if (res.ok) {
                   let data = await res.json();
                   router.push("/");
-                  showpagemessage(`Login Successful`, "success");
+                  showpagemessage(`Login Successful`, "success"); 
                   setloading(false)
                   // alert("Login succesful")
                 } else {
