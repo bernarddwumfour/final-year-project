@@ -30,7 +30,7 @@ const Policymodal = () => {
 
     if(loggedInuser.id == ""){
       router.push("/login")
-      showpagemessage("Please log in to download","info")
+      showpagemessage("Please log in to download summarised policy","info")
       return
     }
 
