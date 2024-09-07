@@ -17,7 +17,7 @@ export default function Home() {
 
       <Modal />
 
-      <div id="hero">
+      <div id="hero ">
       <div className="deco"></div>
         <div className="intro">
           <div>
